@@ -24,7 +24,6 @@
    */
   class Google_DataServiceResource extends Google_ServiceResource {
 
-
   }
 
   /**
@@ -36,7 +35,6 @@
    *  </code>
    */
   class Google_DataGaServiceResource extends Google_ServiceResource {
-
 
     /**
      * Returns Analytics data for a profile. (ga.get)
@@ -76,7 +74,6 @@
    */
   class Google_DataMcfServiceResource extends Google_ServiceResource {
 
-
     /**
      * Returns Analytics Multi-Channel Funnels data for a profile. (mcf.get)
      *
@@ -115,7 +112,6 @@
    */
   class Google_ManagementServiceResource extends Google_ServiceResource {
 
-
   }
 
   /**
@@ -127,7 +123,6 @@
    *  </code>
    */
   class Google_ManagementAccountsServiceResource extends Google_ServiceResource {
-
 
     /**
      * Lists all accounts to which the user has access. (accounts.list)
@@ -158,7 +153,6 @@
    *  </code>
    */
   class Google_ManagementCustomDataSourcesServiceResource extends Google_ServiceResource {
-
 
     /**
      * List custom data sources to which the user has access. (customDataSources.list)
@@ -191,7 +185,6 @@
    *  </code>
    */
   class Google_ManagementDailyUploadsServiceResource extends Google_ServiceResource {
-
 
     /**
      * Delete uploaded data for the given date. (dailyUploads.delete)
@@ -267,7 +260,6 @@
    *  </code>
    */
   class Google_ManagementExperimentsServiceResource extends Google_ServiceResource {
-
 
     /**
      * Delete an experiment. (experiments.delete)
@@ -399,7 +391,6 @@
    */
   class Google_ManagementGoalsServiceResource extends Google_ServiceResource {
 
-
     /**
      * Lists goals to which the user has access. (goals.list)
      *
@@ -433,7 +424,6 @@
    */
   class Google_ManagementProfilesServiceResource extends Google_ServiceResource {
 
-
     /**
      * Lists profiles to which the user has access. (profiles.list)
      *
@@ -466,7 +456,6 @@
    */
   class Google_ManagementSegmentsServiceResource extends Google_ServiceResource {
 
-
     /**
      * Lists advanced segments to which the user has access. (segments.list)
      *
@@ -496,7 +485,6 @@
    *  </code>
    */
   class Google_ManagementWebpropertiesServiceResource extends Google_ServiceResource {
-
 
     /**
      * Lists web properties to which the user has access. (webproperties.list)
@@ -588,37 +576,37 @@ class Google_Account extends Google_Model {
   public function getChildLink() {
     return $this->childLink;
   }
-  public function setCreated($created) {
+  public function setCreated( $created) {
     $this->created = $created;
   }
   public function getCreated() {
     return $this->created;
   }
-  public function setId($id) {
+  public function setId( $id) {
     $this->id = $id;
   }
   public function getId() {
     return $this->id;
   }
-  public function setKind($kind) {
+  public function setKind( $kind) {
     $this->kind = $kind;
   }
   public function getKind() {
     return $this->kind;
   }
-  public function setName($name) {
+  public function setName( $name) {
     $this->name = $name;
   }
   public function getName() {
     return $this->name;
   }
-  public function setSelfLink($selfLink) {
+  public function setSelfLink( $selfLink) {
     $this->selfLink = $selfLink;
   }
   public function getSelfLink() {
     return $this->selfLink;
   }
-  public function setUpdated($updated) {
+  public function setUpdated( $updated) {
     $this->updated = $updated;
   }
   public function getUpdated() {
@@ -629,13 +617,13 @@ class Google_Account extends Google_Model {
 class Google_AccountChildLink extends Google_Model {
   public $href;
   public $type;
-  public function setHref($href) {
+  public function setHref( $href) {
     $this->href = $href;
   }
   public function getHref() {
     return $this->href;
   }
-  public function setType($type) {
+  public function setType( $type) {
     $this->type = $type;
   }
   public function getType() {
@@ -661,43 +649,43 @@ class Google_Accounts extends Google_Model {
   public function getItems() {
     return $this->items;
   }
-  public function setItemsPerPage($itemsPerPage) {
+  public function setItemsPerPage( $itemsPerPage) {
     $this->itemsPerPage = $itemsPerPage;
   }
   public function getItemsPerPage() {
     return $this->itemsPerPage;
   }
-  public function setKind($kind) {
+  public function setKind( $kind) {
     $this->kind = $kind;
   }
   public function getKind() {
     return $this->kind;
   }
-  public function setNextLink($nextLink) {
+  public function setNextLink( $nextLink) {
     $this->nextLink = $nextLink;
   }
   public function getNextLink() {
     return $this->nextLink;
   }
-  public function setPreviousLink($previousLink) {
+  public function setPreviousLink( $previousLink) {
     $this->previousLink = $previousLink;
   }
   public function getPreviousLink() {
     return $this->previousLink;
   }
-  public function setStartIndex($startIndex) {
+  public function setStartIndex( $startIndex) {
     $this->startIndex = $startIndex;
   }
   public function getStartIndex() {
     return $this->startIndex;
   }
-  public function setTotalResults($totalResults) {
+  public function setTotalResults( $totalResults) {
     $this->totalResults = $totalResults;
   }
   public function getTotalResults() {
     return $this->totalResults;
   }
-  public function setUsername($username) {
+  public function setUsername( $username) {
     $this->username = $username;
   }
   public function getUsername() {
@@ -722,7 +710,7 @@ class Google_CustomDataSource extends Google_Model {
   public $selfLink;
   public $updated;
   public $webPropertyId;
-  public function setAccountId($accountId) {
+  public function setAccountId( $accountId) {
     $this->accountId = $accountId;
   }
   public function getAccountId() {
@@ -734,31 +722,31 @@ class Google_CustomDataSource extends Google_Model {
   public function getChildLink() {
     return $this->childLink;
   }
-  public function setCreated($created) {
+  public function setCreated( $created) {
     $this->created = $created;
   }
   public function getCreated() {
     return $this->created;
   }
-  public function setDescription($description) {
+  public function setDescription( $description) {
     $this->description = $description;
   }
   public function getDescription() {
     return $this->description;
   }
-  public function setId($id) {
+  public function setId( $id) {
     $this->id = $id;
   }
   public function getId() {
     return $this->id;
   }
-  public function setKind($kind) {
+  public function setKind( $kind) {
     $this->kind = $kind;
   }
   public function getKind() {
     return $this->kind;
   }
-  public function setName($name) {
+  public function setName( $name) {
     $this->name = $name;
   }
   public function getName() {
@@ -777,19 +765,19 @@ class Google_CustomDataSource extends Google_Model {
   public function getProfilesLinked() {
     return $this->profilesLinked;
   }
-  public function setSelfLink($selfLink) {
+  public function setSelfLink( $selfLink) {
     $this->selfLink = $selfLink;
   }
   public function getSelfLink() {
     return $this->selfLink;
   }
-  public function setUpdated($updated) {
+  public function setUpdated( $updated) {
     $this->updated = $updated;
   }
   public function getUpdated() {
     return $this->updated;
   }
-  public function setWebPropertyId($webPropertyId) {
+  public function setWebPropertyId( $webPropertyId) {
     $this->webPropertyId = $webPropertyId;
   }
   public function getWebPropertyId() {
@@ -800,13 +788,13 @@ class Google_CustomDataSource extends Google_Model {
 class Google_CustomDataSourceChildLink extends Google_Model {
   public $href;
   public $type;
-  public function setHref($href) {
+  public function setHref( $href) {
     $this->href = $href;
   }
   public function getHref() {
     return $this->href;
   }
-  public function setType($type) {
+  public function setType( $type) {
     $this->type = $type;
   }
   public function getType() {
@@ -817,13 +805,13 @@ class Google_CustomDataSourceChildLink extends Google_Model {
 class Google_CustomDataSourceParentLink extends Google_Model {
   public $href;
   public $type;
-  public function setHref($href) {
+  public function setHref( $href) {
     $this->href = $href;
   }
   public function getHref() {
     return $this->href;
   }
-  public function setType($type) {
+  public function setType( $type) {
     $this->type = $type;
   }
   public function getType() {
@@ -849,43 +837,43 @@ class Google_CustomDataSources extends Google_Model {
   public function getItems() {
     return $this->items;
   }
-  public function setItemsPerPage($itemsPerPage) {
+  public function setItemsPerPage( $itemsPerPage) {
     $this->itemsPerPage = $itemsPerPage;
   }
   public function getItemsPerPage() {
     return $this->itemsPerPage;
   }
-  public function setKind($kind) {
+  public function setKind( $kind) {
     $this->kind = $kind;
   }
   public function getKind() {
     return $this->kind;
   }
-  public function setNextLink($nextLink) {
+  public function setNextLink( $nextLink) {
     $this->nextLink = $nextLink;
   }
   public function getNextLink() {
     return $this->nextLink;
   }
-  public function setPreviousLink($previousLink) {
+  public function setPreviousLink( $previousLink) {
     $this->previousLink = $previousLink;
   }
   public function getPreviousLink() {
     return $this->previousLink;
   }
-  public function setStartIndex($startIndex) {
+  public function setStartIndex( $startIndex) {
     $this->startIndex = $startIndex;
   }
   public function getStartIndex() {
     return $this->startIndex;
   }
-  public function setTotalResults($totalResults) {
+  public function setTotalResults( $totalResults) {
     $this->totalResults = $totalResults;
   }
   public function getTotalResults() {
     return $this->totalResults;
   }
-  public function setUsername($username) {
+  public function setUsername( $username) {
     $this->username = $username;
   }
   public function getUsername() {
@@ -909,43 +897,43 @@ class Google_DailyUpload extends Google_Model {
   public $recentChanges;
   public $selfLink;
   public $webPropertyId;
-  public function setAccountId($accountId) {
+  public function setAccountId( $accountId) {
     $this->accountId = $accountId;
   }
   public function getAccountId() {
     return $this->accountId;
   }
-  public function setAppendCount($appendCount) {
+  public function setAppendCount( $appendCount) {
     $this->appendCount = $appendCount;
   }
   public function getAppendCount() {
     return $this->appendCount;
   }
-  public function setCreatedTime($createdTime) {
+  public function setCreatedTime( $createdTime) {
     $this->createdTime = $createdTime;
   }
   public function getCreatedTime() {
     return $this->createdTime;
   }
-  public function setCustomDataSourceId($customDataSourceId) {
+  public function setCustomDataSourceId( $customDataSourceId) {
     $this->customDataSourceId = $customDataSourceId;
   }
   public function getCustomDataSourceId() {
     return $this->customDataSourceId;
   }
-  public function setDate($date) {
+  public function setDate( $date) {
     $this->date = $date;
   }
   public function getDate() {
     return $this->date;
   }
-  public function setKind($kind) {
+  public function setKind( $kind) {
     $this->kind = $kind;
   }
   public function getKind() {
     return $this->kind;
   }
-  public function setModifiedTime($modifiedTime) {
+  public function setModifiedTime( $modifiedTime) {
     $this->modifiedTime = $modifiedTime;
   }
   public function getModifiedTime() {
@@ -964,13 +952,13 @@ class Google_DailyUpload extends Google_Model {
   public function getRecentChanges() {
     return $this->recentChanges;
   }
-  public function setSelfLink($selfLink) {
+  public function setSelfLink( $selfLink) {
     $this->selfLink = $selfLink;
   }
   public function getSelfLink() {
     return $this->selfLink;
   }
-  public function setWebPropertyId($webPropertyId) {
+  public function setWebPropertyId( $webPropertyId) {
     $this->webPropertyId = $webPropertyId;
   }
   public function getWebPropertyId() {
@@ -986,43 +974,43 @@ class Google_DailyUploadAppend extends Google_Model {
   public $kind;
   public $nextAppendLink;
   public $webPropertyId;
-  public function setAccountId($accountId) {
+  public function setAccountId( $accountId) {
     $this->accountId = $accountId;
   }
   public function getAccountId() {
     return $this->accountId;
   }
-  public function setAppendNumber($appendNumber) {
+  public function setAppendNumber( $appendNumber) {
     $this->appendNumber = $appendNumber;
   }
   public function getAppendNumber() {
     return $this->appendNumber;
   }
-  public function setCustomDataSourceId($customDataSourceId) {
+  public function setCustomDataSourceId( $customDataSourceId) {
     $this->customDataSourceId = $customDataSourceId;
   }
   public function getCustomDataSourceId() {
     return $this->customDataSourceId;
   }
-  public function setDate($date) {
+  public function setDate( $date) {
     $this->date = $date;
   }
   public function getDate() {
     return $this->date;
   }
-  public function setKind($kind) {
+  public function setKind( $kind) {
     $this->kind = $kind;
   }
   public function getKind() {
     return $this->kind;
   }
-  public function setNextAppendLink($nextAppendLink) {
+  public function setNextAppendLink( $nextAppendLink) {
     $this->nextAppendLink = $nextAppendLink;
   }
   public function getNextAppendLink() {
     return $this->nextAppendLink;
   }
-  public function setWebPropertyId($webPropertyId) {
+  public function setWebPropertyId( $webPropertyId) {
     $this->webPropertyId = $webPropertyId;
   }
   public function getWebPropertyId() {
@@ -1033,13 +1021,13 @@ class Google_DailyUploadAppend extends Google_Model {
 class Google_DailyUploadParentLink extends Google_Model {
   public $href;
   public $type;
-  public function setHref($href) {
+  public function setHref( $href) {
     $this->href = $href;
   }
   public function getHref() {
     return $this->href;
   }
-  public function setType($type) {
+  public function setType( $type) {
     $this->type = $type;
   }
   public function getType() {
@@ -1050,13 +1038,13 @@ class Google_DailyUploadParentLink extends Google_Model {
 class Google_DailyUploadRecentChanges extends Google_Model {
   public $change;
   public $time;
-  public function setChange($change) {
+  public function setChange( $change) {
     $this->change = $change;
   }
   public function getChange() {
     return $this->change;
   }
-  public function setTime($time) {
+  public function setTime( $time) {
     $this->time = $time;
   }
   public function getTime() {
@@ -1082,43 +1070,43 @@ class Google_DailyUploads extends Google_Model {
   public function getItems() {
     return $this->items;
   }
-  public function setItemsPerPage($itemsPerPage) {
+  public function setItemsPerPage( $itemsPerPage) {
     $this->itemsPerPage = $itemsPerPage;
   }
   public function getItemsPerPage() {
     return $this->itemsPerPage;
   }
-  public function setKind($kind) {
+  public function setKind( $kind) {
     $this->kind = $kind;
   }
   public function getKind() {
     return $this->kind;
   }
-  public function setNextLink($nextLink) {
+  public function setNextLink( $nextLink) {
     $this->nextLink = $nextLink;
   }
   public function getNextLink() {
     return $this->nextLink;
   }
-  public function setPreviousLink($previousLink) {
+  public function setPreviousLink( $previousLink) {
     $this->previousLink = $previousLink;
   }
   public function getPreviousLink() {
     return $this->previousLink;
   }
-  public function setStartIndex($startIndex) {
+  public function setStartIndex( $startIndex) {
     $this->startIndex = $startIndex;
   }
   public function getStartIndex() {
     return $this->startIndex;
   }
-  public function setTotalResults($totalResults) {
+  public function setTotalResults( $totalResults) {
     $this->totalResults = $totalResults;
   }
   public function getTotalResults() {
     return $this->totalResults;
   }
-  public function setUsername($username) {
+  public function setUsername( $username) {
     $this->username = $username;
   }
   public function getUsername() {
@@ -1158,73 +1146,73 @@ class Google_Experiment extends Google_Model {
   public $webPropertyId;
   public $winnerConfidenceLevel;
   public $winnerFound;
-  public function setAccountId($accountId) {
+  public function setAccountId( $accountId) {
     $this->accountId = $accountId;
   }
   public function getAccountId() {
     return $this->accountId;
   }
-  public function setCreated($created) {
+  public function setCreated( $created) {
     $this->created = $created;
   }
   public function getCreated() {
     return $this->created;
   }
-  public function setDescription($description) {
+  public function setDescription( $description) {
     $this->description = $description;
   }
   public function getDescription() {
     return $this->description;
   }
-  public function setEditableInGaUi($editableInGaUi) {
+  public function setEditableInGaUi( $editableInGaUi) {
     $this->editableInGaUi = $editableInGaUi;
   }
   public function getEditableInGaUi() {
     return $this->editableInGaUi;
   }
-  public function setEndTime($endTime) {
+  public function setEndTime( $endTime) {
     $this->endTime = $endTime;
   }
   public function getEndTime() {
     return $this->endTime;
   }
-  public function setId($id) {
+  public function setId( $id) {
     $this->id = $id;
   }
   public function getId() {
     return $this->id;
   }
-  public function setInternalWebPropertyId($internalWebPropertyId) {
+  public function setInternalWebPropertyId( $internalWebPropertyId) {
     $this->internalWebPropertyId = $internalWebPropertyId;
   }
   public function getInternalWebPropertyId() {
     return $this->internalWebPropertyId;
   }
-  public function setKind($kind) {
+  public function setKind( $kind) {
     $this->kind = $kind;
   }
   public function getKind() {
     return $this->kind;
   }
-  public function setMinimumExperimentLengthInDays($minimumExperimentLengthInDays) {
+  public function setMinimumExperimentLengthInDays( $minimumExperimentLengthInDays) {
     $this->minimumExperimentLengthInDays = $minimumExperimentLengthInDays;
   }
   public function getMinimumExperimentLengthInDays() {
     return $this->minimumExperimentLengthInDays;
   }
-  public function setName($name) {
+  public function setName( $name) {
     $this->name = $name;
   }
   public function getName() {
     return $this->name;
   }
-  public function setObjectiveMetric($objectiveMetric) {
+  public function setObjectiveMetric( $objectiveMetric) {
     $this->objectiveMetric = $objectiveMetric;
   }
   public function getObjectiveMetric() {
     return $this->objectiveMetric;
   }
-  public function setOptimizationType($optimizationType) {
+  public function setOptimizationType( $optimizationType) {
     $this->optimizationType = $optimizationType;
   }
   public function getOptimizationType() {
@@ -1236,61 +1224,61 @@ class Google_Experiment extends Google_Model {
   public function getParentLink() {
     return $this->parentLink;
   }
-  public function setProfileId($profileId) {
+  public function setProfileId( $profileId) {
     $this->profileId = $profileId;
   }
   public function getProfileId() {
     return $this->profileId;
   }
-  public function setReasonExperimentEnded($reasonExperimentEnded) {
+  public function setReasonExperimentEnded( $reasonExperimentEnded) {
     $this->reasonExperimentEnded = $reasonExperimentEnded;
   }
   public function getReasonExperimentEnded() {
     return $this->reasonExperimentEnded;
   }
-  public function setRewriteVariationUrlsAsOriginal($rewriteVariationUrlsAsOriginal) {
+  public function setRewriteVariationUrlsAsOriginal( $rewriteVariationUrlsAsOriginal) {
     $this->rewriteVariationUrlsAsOriginal = $rewriteVariationUrlsAsOriginal;
   }
   public function getRewriteVariationUrlsAsOriginal() {
     return $this->rewriteVariationUrlsAsOriginal;
   }
-  public function setSelfLink($selfLink) {
+  public function setSelfLink( $selfLink) {
     $this->selfLink = $selfLink;
   }
   public function getSelfLink() {
     return $this->selfLink;
   }
-  public function setServingFramework($servingFramework) {
+  public function setServingFramework( $servingFramework) {
     $this->servingFramework = $servingFramework;
   }
   public function getServingFramework() {
     return $this->servingFramework;
   }
-  public function setSnippet($snippet) {
+  public function setSnippet( $snippet) {
     $this->snippet = $snippet;
   }
   public function getSnippet() {
     return $this->snippet;
   }
-  public function setStartTime($startTime) {
+  public function setStartTime( $startTime) {
     $this->startTime = $startTime;
   }
   public function getStartTime() {
     return $this->startTime;
   }
-  public function setStatus($status) {
+  public function setStatus( $status) {
     $this->status = $status;
   }
   public function getStatus() {
     return $this->status;
   }
-  public function setTrafficCoverage($trafficCoverage) {
+  public function setTrafficCoverage( $trafficCoverage) {
     $this->trafficCoverage = $trafficCoverage;
   }
   public function getTrafficCoverage() {
     return $this->trafficCoverage;
   }
-  public function setUpdated($updated) {
+  public function setUpdated( $updated) {
     $this->updated = $updated;
   }
   public function getUpdated() {
@@ -1303,19 +1291,19 @@ class Google_Experiment extends Google_Model {
   public function getVariations() {
     return $this->variations;
   }
-  public function setWebPropertyId($webPropertyId) {
+  public function setWebPropertyId( $webPropertyId) {
     $this->webPropertyId = $webPropertyId;
   }
   public function getWebPropertyId() {
     return $this->webPropertyId;
   }
-  public function setWinnerConfidenceLevel($winnerConfidenceLevel) {
+  public function setWinnerConfidenceLevel( $winnerConfidenceLevel) {
     $this->winnerConfidenceLevel = $winnerConfidenceLevel;
   }
   public function getWinnerConfidenceLevel() {
     return $this->winnerConfidenceLevel;
   }
-  public function setWinnerFound($winnerFound) {
+  public function setWinnerFound( $winnerFound) {
     $this->winnerFound = $winnerFound;
   }
   public function getWinnerFound() {
@@ -1326,13 +1314,13 @@ class Google_Experiment extends Google_Model {
 class Google_ExperimentParentLink extends Google_Model {
   public $href;
   public $type;
-  public function setHref($href) {
+  public function setHref( $href) {
     $this->href = $href;
   }
   public function getHref() {
     return $this->href;
   }
-  public function setType($type) {
+  public function setType( $type) {
     $this->type = $type;
   }
   public function getType() {
@@ -1346,31 +1334,31 @@ class Google_ExperimentVariations extends Google_Model {
   public $url;
   public $weight;
   public $won;
-  public function setName($name) {
+  public function setName( $name) {
     $this->name = $name;
   }
   public function getName() {
     return $this->name;
   }
-  public function setStatus($status) {
+  public function setStatus( $status) {
     $this->status = $status;
   }
   public function getStatus() {
     return $this->status;
   }
-  public function setUrl($url) {
+  public function setUrl( $url) {
     $this->url = $url;
   }
   public function getUrl() {
     return $this->url;
   }
-  public function setWeight($weight) {
+  public function setWeight( $weight) {
     $this->weight = $weight;
   }
   public function getWeight() {
     return $this->weight;
   }
-  public function setWon($won) {
+  public function setWon( $won) {
     $this->won = $won;
   }
   public function getWon() {
@@ -1396,43 +1384,43 @@ class Google_Experiments extends Google_Model {
   public function getItems() {
     return $this->items;
   }
-  public function setItemsPerPage($itemsPerPage) {
+  public function setItemsPerPage( $itemsPerPage) {
     $this->itemsPerPage = $itemsPerPage;
   }
   public function getItemsPerPage() {
     return $this->itemsPerPage;
   }
-  public function setKind($kind) {
+  public function setKind( $kind) {
     $this->kind = $kind;
   }
   public function getKind() {
     return $this->kind;
   }
-  public function setNextLink($nextLink) {
+  public function setNextLink( $nextLink) {
     $this->nextLink = $nextLink;
   }
   public function getNextLink() {
     return $this->nextLink;
   }
-  public function setPreviousLink($previousLink) {
+  public function setPreviousLink( $previousLink) {
     $this->previousLink = $previousLink;
   }
   public function getPreviousLink() {
     return $this->previousLink;
   }
-  public function setStartIndex($startIndex) {
+  public function setStartIndex( $startIndex) {
     $this->startIndex = $startIndex;
   }
   public function getStartIndex() {
     return $this->startIndex;
   }
-  public function setTotalResults($totalResults) {
+  public function setTotalResults( $totalResults) {
     $this->totalResults = $totalResults;
   }
   public function getTotalResults() {
     return $this->totalResults;
   }
-  public function setUsername($username) {
+  public function setUsername( $username) {
     $this->username = $username;
   }
   public function getUsername() {
@@ -1467,37 +1455,37 @@ class Google_GaData extends Google_Model {
   public function getColumnHeaders() {
     return $this->columnHeaders;
   }
-  public function setContainsSampledData($containsSampledData) {
+  public function setContainsSampledData( $containsSampledData) {
     $this->containsSampledData = $containsSampledData;
   }
   public function getContainsSampledData() {
     return $this->containsSampledData;
   }
-  public function setId($id) {
+  public function setId( $id) {
     $this->id = $id;
   }
   public function getId() {
     return $this->id;
   }
-  public function setItemsPerPage($itemsPerPage) {
+  public function setItemsPerPage( $itemsPerPage) {
     $this->itemsPerPage = $itemsPerPage;
   }
   public function getItemsPerPage() {
     return $this->itemsPerPage;
   }
-  public function setKind($kind) {
+  public function setKind( $kind) {
     $this->kind = $kind;
   }
   public function getKind() {
     return $this->kind;
   }
-  public function setNextLink($nextLink) {
+  public function setNextLink( $nextLink) {
     $this->nextLink = $nextLink;
   }
   public function getNextLink() {
     return $this->nextLink;
   }
-  public function setPreviousLink($previousLink) {
+  public function setPreviousLink( $previousLink) {
     $this->previousLink = $previousLink;
   }
   public function getPreviousLink() {
@@ -1522,19 +1510,19 @@ class Google_GaData extends Google_Model {
   public function getRows() {
     return $this->rows;
   }
-  public function setSelfLink($selfLink) {
+  public function setSelfLink( $selfLink) {
     $this->selfLink = $selfLink;
   }
   public function getSelfLink() {
     return $this->selfLink;
   }
-  public function setTotalResults($totalResults) {
+  public function setTotalResults( $totalResults) {
     $this->totalResults = $totalResults;
   }
   public function getTotalResults() {
     return $this->totalResults;
   }
-  public function setTotalsForAllResults($totalsForAllResults) {
+  public function setTotalsForAllResults( $totalsForAllResults) {
     $this->totalsForAllResults = $totalsForAllResults;
   }
   public function getTotalsForAllResults() {
@@ -1546,19 +1534,19 @@ class Google_GaDataColumnHeaders extends Google_Model {
   public $columnType;
   public $dataType;
   public $name;
-  public function setColumnType($columnType) {
+  public function setColumnType( $columnType) {
     $this->columnType = $columnType;
   }
   public function getColumnType() {
     return $this->columnType;
   }
-  public function setDataType($dataType) {
+  public function setDataType( $dataType) {
     $this->dataType = $dataType;
   }
   public function getDataType() {
     return $this->dataType;
   }
-  public function setName($name) {
+  public function setName( $name) {
     $this->name = $name;
   }
   public function getName() {
@@ -1573,37 +1561,37 @@ class Google_GaDataProfileInfo extends Google_Model {
   public $profileName;
   public $tableId;
   public $webPropertyId;
-  public function setAccountId($accountId) {
+  public function setAccountId( $accountId) {
     $this->accountId = $accountId;
   }
   public function getAccountId() {
     return $this->accountId;
   }
-  public function setInternalWebPropertyId($internalWebPropertyId) {
+  public function setInternalWebPropertyId( $internalWebPropertyId) {
     $this->internalWebPropertyId = $internalWebPropertyId;
   }
   public function getInternalWebPropertyId() {
     return $this->internalWebPropertyId;
   }
-  public function setProfileId($profileId) {
+  public function setProfileId( $profileId) {
     $this->profileId = $profileId;
   }
   public function getProfileId() {
     return $this->profileId;
   }
-  public function setProfileName($profileName) {
+  public function setProfileName( $profileName) {
     $this->profileName = $profileName;
   }
   public function getProfileName() {
     return $this->profileName;
   }
-  public function setTableId($tableId) {
+  public function setTableId( $tableId) {
     $this->tableId = $tableId;
   }
   public function getTableId() {
     return $this->tableId;
   }
-  public function setWebPropertyId($webPropertyId) {
+  public function setWebPropertyId( $webPropertyId) {
     $this->webPropertyId = $webPropertyId;
   }
   public function getWebPropertyId() {
@@ -1622,31 +1610,31 @@ class Google_GaDataQuery extends Google_Model {
   public $sort;
   public $start_date;
   public $start_index;
-  public function setDimensions($dimensions) {
+  public function setDimensions( $dimensions) {
     $this->dimensions = $dimensions;
   }
   public function getDimensions() {
     return $this->dimensions;
   }
-  public function setEnd_date($end_date) {
+  public function setEnd_date( $end_date) {
     $this->end_date = $end_date;
   }
   public function getEnd_date() {
     return $this->end_date;
   }
-  public function setFilters($filters) {
+  public function setFilters( $filters) {
     $this->filters = $filters;
   }
   public function getFilters() {
     return $this->filters;
   }
-  public function setIds($ids) {
+  public function setIds( $ids) {
     $this->ids = $ids;
   }
   public function getIds() {
     return $this->ids;
   }
-  public function setMax_results($max_results) {
+  public function setMax_results( $max_results) {
     $this->max_results = $max_results;
   }
   public function getMax_results() {
@@ -1659,7 +1647,7 @@ class Google_GaDataQuery extends Google_Model {
   public function getMetrics() {
     return $this->metrics;
   }
-  public function setSegment($segment) {
+  public function setSegment( $segment) {
     $this->segment = $segment;
   }
   public function getSegment() {
@@ -1672,13 +1660,13 @@ class Google_GaDataQuery extends Google_Model {
   public function getSort() {
     return $this->sort;
   }
-  public function setStart_date($start_date) {
+  public function setStart_date( $start_date) {
     $this->start_date = $start_date;
   }
   public function getStart_date() {
     return $this->start_date;
   }
-  public function setStart_index($start_index) {
+  public function setStart_index( $start_index) {
     $this->start_index = $start_index;
   }
   public function getStart_index() {
@@ -1715,19 +1703,19 @@ class Google_Goal extends Google_Model {
   protected $__visitTimeOnSiteDetailsDataType = '';
   public $visitTimeOnSiteDetails;
   public $webPropertyId;
-  public function setAccountId($accountId) {
+  public function setAccountId( $accountId) {
     $this->accountId = $accountId;
   }
   public function getAccountId() {
     return $this->accountId;
   }
-  public function setActive($active) {
+  public function setActive( $active) {
     $this->active = $active;
   }
   public function getActive() {
     return $this->active;
   }
-  public function setCreated($created) {
+  public function setCreated( $created) {
     $this->created = $created;
   }
   public function getCreated() {
@@ -1739,25 +1727,25 @@ class Google_Goal extends Google_Model {
   public function getEventDetails() {
     return $this->eventDetails;
   }
-  public function setId($id) {
+  public function setId( $id) {
     $this->id = $id;
   }
   public function getId() {
     return $this->id;
   }
-  public function setInternalWebPropertyId($internalWebPropertyId) {
+  public function setInternalWebPropertyId( $internalWebPropertyId) {
     $this->internalWebPropertyId = $internalWebPropertyId;
   }
   public function getInternalWebPropertyId() {
     return $this->internalWebPropertyId;
   }
-  public function setKind($kind) {
+  public function setKind( $kind) {
     $this->kind = $kind;
   }
   public function getKind() {
     return $this->kind;
   }
-  public function setName($name) {
+  public function setName( $name) {
     $this->name = $name;
   }
   public function getName() {
@@ -1769,25 +1757,25 @@ class Google_Goal extends Google_Model {
   public function getParentLink() {
     return $this->parentLink;
   }
-  public function setProfileId($profileId) {
+  public function setProfileId( $profileId) {
     $this->profileId = $profileId;
   }
   public function getProfileId() {
     return $this->profileId;
   }
-  public function setSelfLink($selfLink) {
+  public function setSelfLink( $selfLink) {
     $this->selfLink = $selfLink;
   }
   public function getSelfLink() {
     return $this->selfLink;
   }
-  public function setType($type) {
+  public function setType( $type) {
     $this->type = $type;
   }
   public function getType() {
     return $this->type;
   }
-  public function setUpdated($updated) {
+  public function setUpdated( $updated) {
     $this->updated = $updated;
   }
   public function getUpdated() {
@@ -1799,7 +1787,7 @@ class Google_Goal extends Google_Model {
   public function getUrlDestinationDetails() {
     return $this->urlDestinationDetails;
   }
-  public function setValue($value) {
+  public function setValue( $value) {
     $this->value = $value;
   }
   public function getValue() {
@@ -1817,7 +1805,7 @@ class Google_Goal extends Google_Model {
   public function getVisitTimeOnSiteDetails() {
     return $this->visitTimeOnSiteDetails;
   }
-  public function setWebPropertyId($webPropertyId) {
+  public function setWebPropertyId( $webPropertyId) {
     $this->webPropertyId = $webPropertyId;
   }
   public function getWebPropertyId() {
@@ -1837,7 +1825,7 @@ class Google_GoalEventDetails extends Google_Model {
   public function getEventConditions() {
     return $this->eventConditions;
   }
-  public function setUseEventValue($useEventValue) {
+  public function setUseEventValue( $useEventValue) {
     $this->useEventValue = $useEventValue;
   }
   public function getUseEventValue() {
@@ -1851,31 +1839,31 @@ class Google_GoalEventDetailsEventConditions extends Google_Model {
   public $expression;
   public $matchType;
   public $type;
-  public function setComparisonType($comparisonType) {
+  public function setComparisonType( $comparisonType) {
     $this->comparisonType = $comparisonType;
   }
   public function getComparisonType() {
     return $this->comparisonType;
   }
-  public function setComparisonValue($comparisonValue) {
+  public function setComparisonValue( $comparisonValue) {
     $this->comparisonValue = $comparisonValue;
   }
   public function getComparisonValue() {
     return $this->comparisonValue;
   }
-  public function setExpression($expression) {
+  public function setExpression( $expression) {
     $this->expression = $expression;
   }
   public function getExpression() {
     return $this->expression;
   }
-  public function setMatchType($matchType) {
+  public function setMatchType( $matchType) {
     $this->matchType = $matchType;
   }
   public function getMatchType() {
     return $this->matchType;
   }
-  public function setType($type) {
+  public function setType( $type) {
     $this->type = $type;
   }
   public function getType() {
@@ -1886,13 +1874,13 @@ class Google_GoalEventDetailsEventConditions extends Google_Model {
 class Google_GoalParentLink extends Google_Model {
   public $href;
   public $type;
-  public function setHref($href) {
+  public function setHref( $href) {
     $this->href = $href;
   }
   public function getHref() {
     return $this->href;
   }
-  public function setType($type) {
+  public function setType( $type) {
     $this->type = $type;
   }
   public function getType() {
@@ -1908,19 +1896,19 @@ class Google_GoalUrlDestinationDetails extends Google_Model {
   protected $__stepsDataType = 'array';
   public $steps;
   public $url;
-  public function setCaseSensitive($caseSensitive) {
+  public function setCaseSensitive( $caseSensitive) {
     $this->caseSensitive = $caseSensitive;
   }
   public function getCaseSensitive() {
     return $this->caseSensitive;
   }
-  public function setFirstStepRequired($firstStepRequired) {
+  public function setFirstStepRequired( $firstStepRequired) {
     $this->firstStepRequired = $firstStepRequired;
   }
   public function getFirstStepRequired() {
     return $this->firstStepRequired;
   }
-  public function setMatchType($matchType) {
+  public function setMatchType( $matchType) {
     $this->matchType = $matchType;
   }
   public function getMatchType() {
@@ -1933,7 +1921,7 @@ class Google_GoalUrlDestinationDetails extends Google_Model {
   public function getSteps() {
     return $this->steps;
   }
-  public function setUrl($url) {
+  public function setUrl( $url) {
     $this->url = $url;
   }
   public function getUrl() {
@@ -1945,19 +1933,19 @@ class Google_GoalUrlDestinationDetailsSteps extends Google_Model {
   public $name;
   public $number;
   public $url;
-  public function setName($name) {
+  public function setName( $name) {
     $this->name = $name;
   }
   public function getName() {
     return $this->name;
   }
-  public function setNumber($number) {
+  public function setNumber( $number) {
     $this->number = $number;
   }
   public function getNumber() {
     return $this->number;
   }
-  public function setUrl($url) {
+  public function setUrl( $url) {
     $this->url = $url;
   }
   public function getUrl() {
@@ -1968,13 +1956,13 @@ class Google_GoalUrlDestinationDetailsSteps extends Google_Model {
 class Google_GoalVisitNumPagesDetails extends Google_Model {
   public $comparisonType;
   public $comparisonValue;
-  public function setComparisonType($comparisonType) {
+  public function setComparisonType( $comparisonType) {
     $this->comparisonType = $comparisonType;
   }
   public function getComparisonType() {
     return $this->comparisonType;
   }
-  public function setComparisonValue($comparisonValue) {
+  public function setComparisonValue( $comparisonValue) {
     $this->comparisonValue = $comparisonValue;
   }
   public function getComparisonValue() {
@@ -1985,13 +1973,13 @@ class Google_GoalVisitNumPagesDetails extends Google_Model {
 class Google_GoalVisitTimeOnSiteDetails extends Google_Model {
   public $comparisonType;
   public $comparisonValue;
-  public function setComparisonType($comparisonType) {
+  public function setComparisonType( $comparisonType) {
     $this->comparisonType = $comparisonType;
   }
   public function getComparisonType() {
     return $this->comparisonType;
   }
-  public function setComparisonValue($comparisonValue) {
+  public function setComparisonValue( $comparisonValue) {
     $this->comparisonValue = $comparisonValue;
   }
   public function getComparisonValue() {
@@ -2017,43 +2005,43 @@ class Google_Goals extends Google_Model {
   public function getItems() {
     return $this->items;
   }
-  public function setItemsPerPage($itemsPerPage) {
+  public function setItemsPerPage( $itemsPerPage) {
     $this->itemsPerPage = $itemsPerPage;
   }
   public function getItemsPerPage() {
     return $this->itemsPerPage;
   }
-  public function setKind($kind) {
+  public function setKind( $kind) {
     $this->kind = $kind;
   }
   public function getKind() {
     return $this->kind;
   }
-  public function setNextLink($nextLink) {
+  public function setNextLink( $nextLink) {
     $this->nextLink = $nextLink;
   }
   public function getNextLink() {
     return $this->nextLink;
   }
-  public function setPreviousLink($previousLink) {
+  public function setPreviousLink( $previousLink) {
     $this->previousLink = $previousLink;
   }
   public function getPreviousLink() {
     return $this->previousLink;
   }
-  public function setStartIndex($startIndex) {
+  public function setStartIndex( $startIndex) {
     $this->startIndex = $startIndex;
   }
   public function getStartIndex() {
     return $this->startIndex;
   }
-  public function setTotalResults($totalResults) {
+  public function setTotalResults( $totalResults) {
     $this->totalResults = $totalResults;
   }
   public function getTotalResults() {
     return $this->totalResults;
   }
-  public function setUsername($username) {
+  public function setUsername( $username) {
     $this->username = $username;
   }
   public function getUsername() {
@@ -2090,37 +2078,37 @@ class Google_McfData extends Google_Model {
   public function getColumnHeaders() {
     return $this->columnHeaders;
   }
-  public function setContainsSampledData($containsSampledData) {
+  public function setContainsSampledData( $containsSampledData) {
     $this->containsSampledData = $containsSampledData;
   }
   public function getContainsSampledData() {
     return $this->containsSampledData;
   }
-  public function setId($id) {
+  public function setId( $id) {
     $this->id = $id;
   }
   public function getId() {
     return $this->id;
   }
-  public function setItemsPerPage($itemsPerPage) {
+  public function setItemsPerPage( $itemsPerPage) {
     $this->itemsPerPage = $itemsPerPage;
   }
   public function getItemsPerPage() {
     return $this->itemsPerPage;
   }
-  public function setKind($kind) {
+  public function setKind( $kind) {
     $this->kind = $kind;
   }
   public function getKind() {
     return $this->kind;
   }
-  public function setNextLink($nextLink) {
+  public function setNextLink( $nextLink) {
     $this->nextLink = $nextLink;
   }
   public function getNextLink() {
     return $this->nextLink;
   }
-  public function setPreviousLink($previousLink) {
+  public function setPreviousLink( $previousLink) {
     $this->previousLink = $previousLink;
   }
   public function getPreviousLink() {
@@ -2145,19 +2133,19 @@ class Google_McfData extends Google_Model {
   public function getRows() {
     return $this->rows;
   }
-  public function setSelfLink($selfLink) {
+  public function setSelfLink( $selfLink) {
     $this->selfLink = $selfLink;
   }
   public function getSelfLink() {
     return $this->selfLink;
   }
-  public function setTotalResults($totalResults) {
+  public function setTotalResults( $totalResults) {
     $this->totalResults = $totalResults;
   }
   public function getTotalResults() {
     return $this->totalResults;
   }
-  public function setTotalsForAllResults($totalsForAllResults) {
+  public function setTotalsForAllResults( $totalsForAllResults) {
     $this->totalsForAllResults = $totalsForAllResults;
   }
   public function getTotalsForAllResults() {
@@ -2169,19 +2157,19 @@ class Google_McfDataColumnHeaders extends Google_Model {
   public $columnType;
   public $dataType;
   public $name;
-  public function setColumnType($columnType) {
+  public function setColumnType( $columnType) {
     $this->columnType = $columnType;
   }
   public function getColumnType() {
     return $this->columnType;
   }
-  public function setDataType($dataType) {
+  public function setDataType( $dataType) {
     $this->dataType = $dataType;
   }
   public function getDataType() {
     return $this->dataType;
   }
-  public function setName($name) {
+  public function setName( $name) {
     $this->name = $name;
   }
   public function getName() {
@@ -2196,37 +2184,37 @@ class Google_McfDataProfileInfo extends Google_Model {
   public $profileName;
   public $tableId;
   public $webPropertyId;
-  public function setAccountId($accountId) {
+  public function setAccountId( $accountId) {
     $this->accountId = $accountId;
   }
   public function getAccountId() {
     return $this->accountId;
   }
-  public function setInternalWebPropertyId($internalWebPropertyId) {
+  public function setInternalWebPropertyId( $internalWebPropertyId) {
     $this->internalWebPropertyId = $internalWebPropertyId;
   }
   public function getInternalWebPropertyId() {
     return $this->internalWebPropertyId;
   }
-  public function setProfileId($profileId) {
+  public function setProfileId( $profileId) {
     $this->profileId = $profileId;
   }
   public function getProfileId() {
     return $this->profileId;
   }
-  public function setProfileName($profileName) {
+  public function setProfileName( $profileName) {
     $this->profileName = $profileName;
   }
   public function getProfileName() {
     return $this->profileName;
   }
-  public function setTableId($tableId) {
+  public function setTableId( $tableId) {
     $this->tableId = $tableId;
   }
   public function getTableId() {
     return $this->tableId;
   }
-  public function setWebPropertyId($webPropertyId) {
+  public function setWebPropertyId( $webPropertyId) {
     $this->webPropertyId = $webPropertyId;
   }
   public function getWebPropertyId() {
@@ -2245,31 +2233,31 @@ class Google_McfDataQuery extends Google_Model {
   public $sort;
   public $start_date;
   public $start_index;
-  public function setDimensions($dimensions) {
+  public function setDimensions( $dimensions) {
     $this->dimensions = $dimensions;
   }
   public function getDimensions() {
     return $this->dimensions;
   }
-  public function setEnd_date($end_date) {
+  public function setEnd_date( $end_date) {
     $this->end_date = $end_date;
   }
   public function getEnd_date() {
     return $this->end_date;
   }
-  public function setFilters($filters) {
+  public function setFilters( $filters) {
     $this->filters = $filters;
   }
   public function getFilters() {
     return $this->filters;
   }
-  public function setIds($ids) {
+  public function setIds( $ids) {
     $this->ids = $ids;
   }
   public function getIds() {
     return $this->ids;
   }
-  public function setMax_results($max_results) {
+  public function setMax_results( $max_results) {
     $this->max_results = $max_results;
   }
   public function getMax_results() {
@@ -2282,7 +2270,7 @@ class Google_McfDataQuery extends Google_Model {
   public function getMetrics() {
     return $this->metrics;
   }
-  public function setSegment($segment) {
+  public function setSegment( $segment) {
     $this->segment = $segment;
   }
   public function getSegment() {
@@ -2295,13 +2283,13 @@ class Google_McfDataQuery extends Google_Model {
   public function getSort() {
     return $this->sort;
   }
-  public function setStart_date($start_date) {
+  public function setStart_date( $start_date) {
     $this->start_date = $start_date;
   }
   public function getStart_date() {
     return $this->start_date;
   }
-  public function setStart_index($start_index) {
+  public function setStart_index( $start_index) {
     $this->start_index = $start_index;
   }
   public function getStart_index() {
@@ -2321,7 +2309,7 @@ class Google_McfDataRows extends Google_Model {
   public function getConversionPathValue() {
     return $this->conversionPathValue;
   }
-  public function setPrimitiveValue($primitiveValue) {
+  public function setPrimitiveValue( $primitiveValue) {
     $this->primitiveValue = $primitiveValue;
   }
   public function getPrimitiveValue() {
@@ -2332,13 +2320,13 @@ class Google_McfDataRows extends Google_Model {
 class Google_McfDataRowsConversionPathValue extends Google_Model {
   public $interactionType;
   public $nodeValue;
-  public function setInteractionType($interactionType) {
+  public function setInteractionType( $interactionType) {
     $this->interactionType = $interactionType;
   }
   public function getInteractionType() {
     return $this->interactionType;
   }
-  public function setNodeValue($nodeValue) {
+  public function setNodeValue( $nodeValue) {
     $this->nodeValue = $nodeValue;
   }
   public function getNodeValue() {
@@ -2371,7 +2359,7 @@ class Google_Profile extends Google_Model {
   public $updated;
   public $webPropertyId;
   public $websiteUrl;
-  public function setAccountId($accountId) {
+  public function setAccountId( $accountId) {
     $this->accountId = $accountId;
   }
   public function getAccountId() {
@@ -2383,55 +2371,55 @@ class Google_Profile extends Google_Model {
   public function getChildLink() {
     return $this->childLink;
   }
-  public function setCreated($created) {
+  public function setCreated( $created) {
     $this->created = $created;
   }
   public function getCreated() {
     return $this->created;
   }
-  public function setCurrency($currency) {
+  public function setCurrency( $currency) {
     $this->currency = $currency;
   }
   public function getCurrency() {
     return $this->currency;
   }
-  public function setDefaultPage($defaultPage) {
+  public function setDefaultPage( $defaultPage) {
     $this->defaultPage = $defaultPage;
   }
   public function getDefaultPage() {
     return $this->defaultPage;
   }
-  public function setECommerceTracking($eCommerceTracking) {
+  public function setECommerceTracking( $eCommerceTracking) {
     $this->eCommerceTracking = $eCommerceTracking;
   }
   public function getECommerceTracking() {
     return $this->eCommerceTracking;
   }
-  public function setExcludeQueryParameters($excludeQueryParameters) {
+  public function setExcludeQueryParameters( $excludeQueryParameters) {
     $this->excludeQueryParameters = $excludeQueryParameters;
   }
   public function getExcludeQueryParameters() {
     return $this->excludeQueryParameters;
   }
-  public function setId($id) {
+  public function setId( $id) {
     $this->id = $id;
   }
   public function getId() {
     return $this->id;
   }
-  public function setInternalWebPropertyId($internalWebPropertyId) {
+  public function setInternalWebPropertyId( $internalWebPropertyId) {
     $this->internalWebPropertyId = $internalWebPropertyId;
   }
   public function getInternalWebPropertyId() {
     return $this->internalWebPropertyId;
   }
-  public function setKind($kind) {
+  public function setKind( $kind) {
     $this->kind = $kind;
   }
   public function getKind() {
     return $this->kind;
   }
-  public function setName($name) {
+  public function setName( $name) {
     $this->name = $name;
   }
   public function getName() {
@@ -2443,49 +2431,49 @@ class Google_Profile extends Google_Model {
   public function getParentLink() {
     return $this->parentLink;
   }
-  public function setSelfLink($selfLink) {
+  public function setSelfLink( $selfLink) {
     $this->selfLink = $selfLink;
   }
   public function getSelfLink() {
     return $this->selfLink;
   }
-  public function setSiteSearchCategoryParameters($siteSearchCategoryParameters) {
+  public function setSiteSearchCategoryParameters( $siteSearchCategoryParameters) {
     $this->siteSearchCategoryParameters = $siteSearchCategoryParameters;
   }
   public function getSiteSearchCategoryParameters() {
     return $this->siteSearchCategoryParameters;
   }
-  public function setSiteSearchQueryParameters($siteSearchQueryParameters) {
+  public function setSiteSearchQueryParameters( $siteSearchQueryParameters) {
     $this->siteSearchQueryParameters = $siteSearchQueryParameters;
   }
   public function getSiteSearchQueryParameters() {
     return $this->siteSearchQueryParameters;
   }
-  public function setTimezone($timezone) {
+  public function setTimezone( $timezone) {
     $this->timezone = $timezone;
   }
   public function getTimezone() {
     return $this->timezone;
   }
-  public function setType($type) {
+  public function setType( $type) {
     $this->type = $type;
   }
   public function getType() {
     return $this->type;
   }
-  public function setUpdated($updated) {
+  public function setUpdated( $updated) {
     $this->updated = $updated;
   }
   public function getUpdated() {
     return $this->updated;
   }
-  public function setWebPropertyId($webPropertyId) {
+  public function setWebPropertyId( $webPropertyId) {
     $this->webPropertyId = $webPropertyId;
   }
   public function getWebPropertyId() {
     return $this->webPropertyId;
   }
-  public function setWebsiteUrl($websiteUrl) {
+  public function setWebsiteUrl( $websiteUrl) {
     $this->websiteUrl = $websiteUrl;
   }
   public function getWebsiteUrl() {
@@ -2496,13 +2484,13 @@ class Google_Profile extends Google_Model {
 class Google_ProfileChildLink extends Google_Model {
   public $href;
   public $type;
-  public function setHref($href) {
+  public function setHref( $href) {
     $this->href = $href;
   }
   public function getHref() {
     return $this->href;
   }
-  public function setType($type) {
+  public function setType( $type) {
     $this->type = $type;
   }
   public function getType() {
@@ -2513,13 +2501,13 @@ class Google_ProfileChildLink extends Google_Model {
 class Google_ProfileParentLink extends Google_Model {
   public $href;
   public $type;
-  public function setHref($href) {
+  public function setHref( $href) {
     $this->href = $href;
   }
   public function getHref() {
     return $this->href;
   }
-  public function setType($type) {
+  public function setType( $type) {
     $this->type = $type;
   }
   public function getType() {
@@ -2545,43 +2533,43 @@ class Google_Profiles extends Google_Model {
   public function getItems() {
     return $this->items;
   }
-  public function setItemsPerPage($itemsPerPage) {
+  public function setItemsPerPage( $itemsPerPage) {
     $this->itemsPerPage = $itemsPerPage;
   }
   public function getItemsPerPage() {
     return $this->itemsPerPage;
   }
-  public function setKind($kind) {
+  public function setKind( $kind) {
     $this->kind = $kind;
   }
   public function getKind() {
     return $this->kind;
   }
-  public function setNextLink($nextLink) {
+  public function setNextLink( $nextLink) {
     $this->nextLink = $nextLink;
   }
   public function getNextLink() {
     return $this->nextLink;
   }
-  public function setPreviousLink($previousLink) {
+  public function setPreviousLink( $previousLink) {
     $this->previousLink = $previousLink;
   }
   public function getPreviousLink() {
     return $this->previousLink;
   }
-  public function setStartIndex($startIndex) {
+  public function setStartIndex( $startIndex) {
     $this->startIndex = $startIndex;
   }
   public function getStartIndex() {
     return $this->startIndex;
   }
-  public function setTotalResults($totalResults) {
+  public function setTotalResults( $totalResults) {
     $this->totalResults = $totalResults;
   }
   public function getTotalResults() {
     return $this->totalResults;
   }
-  public function setUsername($username) {
+  public function setUsername( $username) {
     $this->username = $username;
   }
   public function getUsername() {
@@ -2598,49 +2586,49 @@ class Google_Segment extends Google_Model {
   public $segmentId;
   public $selfLink;
   public $updated;
-  public function setCreated($created) {
+  public function setCreated( $created) {
     $this->created = $created;
   }
   public function getCreated() {
     return $this->created;
   }
-  public function setDefinition($definition) {
+  public function setDefinition( $definition) {
     $this->definition = $definition;
   }
   public function getDefinition() {
     return $this->definition;
   }
-  public function setId($id) {
+  public function setId( $id) {
     $this->id = $id;
   }
   public function getId() {
     return $this->id;
   }
-  public function setKind($kind) {
+  public function setKind( $kind) {
     $this->kind = $kind;
   }
   public function getKind() {
     return $this->kind;
   }
-  public function setName($name) {
+  public function setName( $name) {
     $this->name = $name;
   }
   public function getName() {
     return $this->name;
   }
-  public function setSegmentId($segmentId) {
+  public function setSegmentId( $segmentId) {
     $this->segmentId = $segmentId;
   }
   public function getSegmentId() {
     return $this->segmentId;
   }
-  public function setSelfLink($selfLink) {
+  public function setSelfLink( $selfLink) {
     $this->selfLink = $selfLink;
   }
   public function getSelfLink() {
     return $this->selfLink;
   }
-  public function setUpdated($updated) {
+  public function setUpdated( $updated) {
     $this->updated = $updated;
   }
   public function getUpdated() {
@@ -2666,43 +2654,43 @@ class Google_Segments extends Google_Model {
   public function getItems() {
     return $this->items;
   }
-  public function setItemsPerPage($itemsPerPage) {
+  public function setItemsPerPage( $itemsPerPage) {
     $this->itemsPerPage = $itemsPerPage;
   }
   public function getItemsPerPage() {
     return $this->itemsPerPage;
   }
-  public function setKind($kind) {
+  public function setKind( $kind) {
     $this->kind = $kind;
   }
   public function getKind() {
     return $this->kind;
   }
-  public function setNextLink($nextLink) {
+  public function setNextLink( $nextLink) {
     $this->nextLink = $nextLink;
   }
   public function getNextLink() {
     return $this->nextLink;
   }
-  public function setPreviousLink($previousLink) {
+  public function setPreviousLink( $previousLink) {
     $this->previousLink = $previousLink;
   }
   public function getPreviousLink() {
     return $this->previousLink;
   }
-  public function setStartIndex($startIndex) {
+  public function setStartIndex( $startIndex) {
     $this->startIndex = $startIndex;
   }
   public function getStartIndex() {
     return $this->startIndex;
   }
-  public function setTotalResults($totalResults) {
+  public function setTotalResults( $totalResults) {
     $this->totalResults = $totalResults;
   }
   public function getTotalResults() {
     return $this->totalResults;
   }
-  public function setUsername($username) {
+  public function setUsername( $username) {
     $this->username = $username;
   }
   public function getUsername() {
@@ -2728,43 +2716,43 @@ class Google_Webproperties extends Google_Model {
   public function getItems() {
     return $this->items;
   }
-  public function setItemsPerPage($itemsPerPage) {
+  public function setItemsPerPage( $itemsPerPage) {
     $this->itemsPerPage = $itemsPerPage;
   }
   public function getItemsPerPage() {
     return $this->itemsPerPage;
   }
-  public function setKind($kind) {
+  public function setKind( $kind) {
     $this->kind = $kind;
   }
   public function getKind() {
     return $this->kind;
   }
-  public function setNextLink($nextLink) {
+  public function setNextLink( $nextLink) {
     $this->nextLink = $nextLink;
   }
   public function getNextLink() {
     return $this->nextLink;
   }
-  public function setPreviousLink($previousLink) {
+  public function setPreviousLink( $previousLink) {
     $this->previousLink = $previousLink;
   }
   public function getPreviousLink() {
     return $this->previousLink;
   }
-  public function setStartIndex($startIndex) {
+  public function setStartIndex( $startIndex) {
     $this->startIndex = $startIndex;
   }
   public function getStartIndex() {
     return $this->startIndex;
   }
-  public function setTotalResults($totalResults) {
+  public function setTotalResults( $totalResults) {
     $this->totalResults = $totalResults;
   }
   public function getTotalResults() {
     return $this->totalResults;
   }
-  public function setUsername($username) {
+  public function setUsername( $username) {
     $this->username = $username;
   }
   public function getUsername() {
@@ -2791,7 +2779,7 @@ class Google_Webproperty extends Google_Model {
   public $selfLink;
   public $updated;
   public $websiteUrl;
-  public function setAccountId($accountId) {
+  public function setAccountId( $accountId) {
     $this->accountId = $accountId;
   }
   public function getAccountId() {
@@ -2803,43 +2791,43 @@ class Google_Webproperty extends Google_Model {
   public function getChildLink() {
     return $this->childLink;
   }
-  public function setCreated($created) {
+  public function setCreated( $created) {
     $this->created = $created;
   }
   public function getCreated() {
     return $this->created;
   }
-  public function setId($id) {
+  public function setId( $id) {
     $this->id = $id;
   }
   public function getId() {
     return $this->id;
   }
-  public function setIndustryVertical($industryVertical) {
+  public function setIndustryVertical( $industryVertical) {
     $this->industryVertical = $industryVertical;
   }
   public function getIndustryVertical() {
     return $this->industryVertical;
   }
-  public function setInternalWebPropertyId($internalWebPropertyId) {
+  public function setInternalWebPropertyId( $internalWebPropertyId) {
     $this->internalWebPropertyId = $internalWebPropertyId;
   }
   public function getInternalWebPropertyId() {
     return $this->internalWebPropertyId;
   }
-  public function setKind($kind) {
+  public function setKind( $kind) {
     $this->kind = $kind;
   }
   public function getKind() {
     return $this->kind;
   }
-  public function setLevel($level) {
+  public function setLevel( $level) {
     $this->level = $level;
   }
   public function getLevel() {
     return $this->level;
   }
-  public function setName($name) {
+  public function setName( $name) {
     $this->name = $name;
   }
   public function getName() {
@@ -2851,25 +2839,25 @@ class Google_Webproperty extends Google_Model {
   public function getParentLink() {
     return $this->parentLink;
   }
-  public function setProfileCount($profileCount) {
+  public function setProfileCount( $profileCount) {
     $this->profileCount = $profileCount;
   }
   public function getProfileCount() {
     return $this->profileCount;
   }
-  public function setSelfLink($selfLink) {
+  public function setSelfLink( $selfLink) {
     $this->selfLink = $selfLink;
   }
   public function getSelfLink() {
     return $this->selfLink;
   }
-  public function setUpdated($updated) {
+  public function setUpdated( $updated) {
     $this->updated = $updated;
   }
   public function getUpdated() {
     return $this->updated;
   }
-  public function setWebsiteUrl($websiteUrl) {
+  public function setWebsiteUrl( $websiteUrl) {
     $this->websiteUrl = $websiteUrl;
   }
   public function getWebsiteUrl() {
@@ -2880,13 +2868,13 @@ class Google_Webproperty extends Google_Model {
 class Google_WebpropertyChildLink extends Google_Model {
   public $href;
   public $type;
-  public function setHref($href) {
+  public function setHref( $href) {
     $this->href = $href;
   }
   public function getHref() {
     return $this->href;
   }
-  public function setType($type) {
+  public function setType( $type) {
     $this->type = $type;
   }
   public function getType() {
@@ -2897,13 +2885,13 @@ class Google_WebpropertyChildLink extends Google_Model {
 class Google_WebpropertyParentLink extends Google_Model {
   public $href;
   public $type;
-  public function setHref($href) {
+  public function setHref( $href) {
     $this->href = $href;
   }
   public function getHref() {
     return $this->href;
   }
-  public function setType($type) {
+  public function setType( $type) {
     $this->type = $type;
   }
   public function getType() {
