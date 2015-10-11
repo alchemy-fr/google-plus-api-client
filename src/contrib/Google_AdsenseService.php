@@ -1064,7 +1064,7 @@ class Google_AdSenseService extends Google_Service {
   }
 }
 
-
+if(!class_exists('Google_Account')){
 
 class Google_Account extends Google_Model {
   public $id;
@@ -1105,6 +1105,7 @@ class Google_Account extends Google_Model {
   public function getSubAccounts() {
     return $this->subAccounts;
   }
+}
 }
 
 class Google_Accounts extends Google_Model {
