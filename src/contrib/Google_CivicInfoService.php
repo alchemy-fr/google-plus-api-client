@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "elections" collection of methods.
    * Typical usage is:

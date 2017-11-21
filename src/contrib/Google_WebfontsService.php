@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "webfonts" collection of methods.
    * Typical usage is:

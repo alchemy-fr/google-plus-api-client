@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "activities" collection of methods.
    * Typical usage is:
@@ -22,7 +21,7 @@
    *   $activities = $adminService->activities;
    *  </code>
    */
-  class Google_ActivitiesServiceResource extends Google_ServiceResource {
+  class Google_Reports_ActivitiesServiceResource extends Google_ServiceResource {
 
     /**
      * Retrieves a list of activities for a specific customer and application. (activities.list)
@@ -38,14 +37,14 @@
      * @opt_param int maxResults Number of activity records to be shown in each page.
      * @opt_param string pageToken Token to specify next page.
      * @opt_param string startTime Return events which occured at or after this time.
-     * @return Google_Activities
+     * @return Google_Reports_Activities
      */
     public function listActivities($userKey, $applicationName, $optParams = array()) {
       $params = array('userKey' => $userKey, 'applicationName' => $applicationName);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_Activities($data);
+        return new Google_Reports_Activities($data);
       } else {
         return $data;
       }
@@ -150,7 +149,7 @@ class Google_ReportsService extends Google_Service {
     $this->serviceName = 'admin';
 
     $client->addService($this->serviceName, $this->version);
-    $this->activities = new Google_ActivitiesServiceResource($this, $this->serviceName, 'activities', json_decode('{"methods": {"list": {"id": "reports.activities.list", "path": "activity/users/{userKey}/applications/{applicationName}", "httpMethod": "GET", "parameters": {"actorIpAddress": {"type": "string", "location": "query"}, "applicationName": {"type": "string", "required": true, "location": "path"}, "endTime": {"type": "string", "location": "query"}, "eventName": {"type": "string", "location": "query"}, "filters": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "format": "int32", "minimum": "1", "maximum": "1000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "startTime": {"type": "string", "location": "query"}, "userKey": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Activities"}, "scopes": ["https://www.googleapis.com/auth/admin.reports.audit.readonly"]}}}', true));
+    $this->activities = new Google_Reports_ActivitiesServiceResource($this, $this->serviceName, 'activities', json_decode('{"methods": {"list": {"id": "reports.activities.list", "path": "activity/users/{userKey}/applications/{applicationName}", "httpMethod": "GET", "parameters": {"actorIpAddress": {"type": "string", "location": "query"}, "applicationName": {"type": "string", "required": true, "location": "path"}, "endTime": {"type": "string", "location": "query"}, "eventName": {"type": "string", "location": "query"}, "filters": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "format": "int32", "minimum": "1", "maximum": "1000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "startTime": {"type": "string", "location": "query"}, "userKey": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Activities"}, "scopes": ["https://www.googleapis.com/auth/admin.reports.audit.readonly"]}}}', true));
     $this->customerUsageReports = new Google_CustomerUsageReportsServiceResource($this, $this->serviceName, 'customerUsageReports', json_decode('{"methods": {"get": {"id": "reports.customerUsageReports.get", "path": "usage/dates/{date}", "httpMethod": "GET", "parameters": {"date": {"type": "string", "required": true, "location": "path"}, "pageToken": {"type": "string", "location": "query"}, "parameters": {"type": "string", "location": "query"}}, "response": {"$ref": "UsageReports"}, "scopes": ["https://www.googleapis.com/auth/admin.reports.usage.readonly"]}}}', true));
     $this->userUsageReport = new Google_UserUsageReportServiceResource($this, $this->serviceName, 'userUsageReport', json_decode('{"methods": {"get": {"id": "reports.userUsageReport.get", "path": "usage/users/{userKey}/dates/{date}", "httpMethod": "GET", "parameters": {"date": {"type": "string", "required": true, "location": "path"}, "filters": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "format": "uint32", "maximum": "1000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "parameters": {"type": "string", "location": "query"}, "userKey": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "UsageReports"}, "scopes": ["https://www.googleapis.com/auth/admin.reports.usage.readonly"]}}}', true));
 
@@ -159,7 +158,7 @@ class Google_ReportsService extends Google_Service {
 
 
 
-class Google_Activities extends Google_Model {
+class Google_Reports_Activities extends Google_Model {
   protected $__itemsType = 'Google_Activity';
   protected $__itemsDataType = 'array';
   public $items;
@@ -186,7 +185,7 @@ class Google_Activities extends Google_Model {
   }
 }
 
-class Google_Activity extends Google_Model {
+class Google_Reports_Activity extends Google_Model {
   protected $__actorType = 'Google_ActivityActor';
   protected $__actorDataType = '';
   public $actor;
@@ -199,7 +198,7 @@ class Google_Activity extends Google_Model {
   public $ipAddress;
   public $kind;
   public $ownerDomain;
-  public function setActor(Google_ActivityActor $actor) {
+  public function setActor(Google_Reports_ActivityActor $actor) {
     $this->actor = $actor;
   }
   public function getActor() {
@@ -238,7 +237,7 @@ class Google_Activity extends Google_Model {
   }
 }
 
-class Google_ActivityActor extends Google_Model {
+class Google_Reports_ActivityActor extends Google_Model {
   public $callerType;
   public $email;
   public $key;
@@ -269,7 +268,7 @@ class Google_ActivityActor extends Google_Model {
   }
 }
 
-class Google_ActivityEvents extends Google_Model {
+class Google_Reports_ActivityEvents extends Google_Model {
   public $name;
   protected $__parametersType = 'Google_ActivityEventsParameters';
   protected $__parametersDataType = 'array';
@@ -296,7 +295,7 @@ class Google_ActivityEvents extends Google_Model {
   }
 }
 
-class Google_ActivityEventsParameters extends Google_Model {
+class Google_Reports_ActivityEventsParameters extends Google_Model {
   public $boolValue;
   public $intValue;
   public $name;
@@ -327,7 +326,7 @@ class Google_ActivityEventsParameters extends Google_Model {
   }
 }
 
-class Google_ActivityId extends Google_Model {
+class Google_Reports_ActivityId extends Google_Model {
   public $applicationName;
   public $customerId;
   public $time;

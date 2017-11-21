@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "inapppurchases" collection of methods.
    * Typical usage is:

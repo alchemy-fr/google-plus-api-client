@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "acl" collection of methods.
    * Typical usage is:
@@ -22,7 +21,7 @@
    *   $acl = $orkutService->acl;
    *  </code>
    */
-  class Google_AclServiceResource extends Google_ServiceResource {
+  class Google_Orkut_AclServiceResource extends Google_ServiceResource {
 
     /**
      * Excludes an element from the ACL of the activity. (acl.delete)
@@ -47,7 +46,7 @@
    *   $activities = $orkutService->activities;
    *  </code>
    */
-  class Google_ActivitiesServiceResource extends Google_ServiceResource {
+  class Google_Orkut_ActivitiesServiceResource extends Google_ServiceResource {
 
     /**
      * Deletes an existing activity, if the access controls allow it. (activities.delete)
@@ -206,7 +205,7 @@
    *   $comments = $orkutService->comments;
    *  </code>
    */
-  class Google_CommentsServiceResource extends Google_ServiceResource {
+  class Google_Orkut_CommentsServiceResource extends Google_ServiceResource {
 
     /**
      * Deletes an existing comment. (comments.delete)
@@ -227,14 +226,14 @@
      * @param array $optParams Optional parameters.
      *
      * @opt_param string hl Specifies the interface language (host language) of your user interface.
-     * @return Google_Comment
+     * @return Google_Orkut_Comment
      */
     public function get($commentId, $optParams = array()) {
       $params = array('commentId' => $commentId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Comment($data);
+        return new Google_Orkut_Comment($data);
       } else {
         return $data;
       }
@@ -243,16 +242,16 @@
      * Inserts a new comment to an activity. (comments.insert)
      *
      * @param string $activityId The ID of the activity to contain the new comment.
-     * @param Google_Comment $postBody
+     * @param Google_Orkut_Comment $postBody
      * @param array $optParams Optional parameters.
-     * @return Google_Comment
+     * @return Google_Orkut_Comment
      */
-    public function insert($activityId, Google_Comment $postBody, $optParams = array()) {
+    public function insert($activityId, Google_Orkut_Comment $postBody, $optParams = array()) {
       $params = array('activityId' => $activityId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Comment($data);
+        return new Google_Orkut_Comment($data);
       } else {
         return $data;
       }
@@ -267,14 +266,14 @@
      * @opt_param string maxResults The maximum number of activities to include in the response.
      * @opt_param string orderBy Sort search results.
      * @opt_param string pageToken A continuation token that allows pagination.
-     * @return Google_CommentList
+     * @return Google_Orkut_CommentList
      */
     public function listComments($activityId, $optParams = array()) {
       $params = array('activityId' => $activityId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_CommentList($data);
+        return new Google_Orkut_CommentList($data);
       } else {
         return $data;
       }
@@ -826,16 +825,16 @@
     /**
      * Creates a new scrap. (scraps.insert)
      *
-     * @param Google_Activity $postBody
+     * @param Google_Orkut_Activity $postBody
      * @param array $optParams Optional parameters.
-     * @return Google_Activity
+     * @return Google_Orkut_Activity
      */
-    public function insert(Google_Activity $postBody, $optParams = array()) {
+    public function insert(Google_Orkut_Activity $postBody, $optParams = array()) {
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Activity($data);
+        return new Google_Orkut_Activity($data);
       } else {
         return $data;
       }
@@ -884,11 +883,11 @@ class Google_OrkutService extends Google_Service {
     $this->serviceName = 'orkut';
 
     $client->addService($this->serviceName, $this->version);
-    $this->acl = new Google_AclServiceResource($this, $this->serviceName, 'acl', json_decode('{"methods": {"delete": {"id": "orkut.acl.delete", "path": "activities/{activityId}/acl/{userId}", "httpMethod": "DELETE", "parameters": {"activityId": {"type": "string", "required": true, "location": "path"}, "userId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/orkut"]}}}', true));
-    $this->activities = new Google_ActivitiesServiceResource($this, $this->serviceName, 'activities', json_decode('{"methods": {"delete": {"id": "orkut.activities.delete", "path": "activities/{activityId}", "httpMethod": "DELETE", "parameters": {"activityId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/orkut"]}, "list": {"id": "orkut.activities.list", "path": "people/{userId}/activities/{collection}", "httpMethod": "GET", "parameters": {"collection": {"type": "string", "required": true, "enum": ["all", "scraps", "stream"], "location": "path"}, "hl": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "1", "maximum": "100", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "userId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "ActivityList"}, "scopes": ["https://www.googleapis.com/auth/orkut", "https://www.googleapis.com/auth/orkut.readonly"]}}}', true));
+    $this->acl = new Google_Orkut_AclServiceResource($this, $this->serviceName, 'acl', json_decode('{"methods": {"delete": {"id": "orkut.acl.delete", "path": "activities/{activityId}/acl/{userId}", "httpMethod": "DELETE", "parameters": {"activityId": {"type": "string", "required": true, "location": "path"}, "userId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/orkut"]}}}', true));
+    $this->activities = new Google_Orkut_ActivitiesServiceResource($this, $this->serviceName, 'activities', json_decode('{"methods": {"delete": {"id": "orkut.activities.delete", "path": "activities/{activityId}", "httpMethod": "DELETE", "parameters": {"activityId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/orkut"]}, "list": {"id": "orkut.activities.list", "path": "people/{userId}/activities/{collection}", "httpMethod": "GET", "parameters": {"collection": {"type": "string", "required": true, "enum": ["all", "scraps", "stream"], "location": "path"}, "hl": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "1", "maximum": "100", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "userId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "ActivityList"}, "scopes": ["https://www.googleapis.com/auth/orkut", "https://www.googleapis.com/auth/orkut.readonly"]}}}', true));
     $this->activityVisibility = new Google_ActivityVisibilityServiceResource($this, $this->serviceName, 'activityVisibility', json_decode('{"methods": {"get": {"id": "orkut.activityVisibility.get", "path": "activities/{activityId}/visibility", "httpMethod": "GET", "parameters": {"activityId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Visibility"}, "scopes": ["https://www.googleapis.com/auth/orkut", "https://www.googleapis.com/auth/orkut.readonly"]}, "patch": {"id": "orkut.activityVisibility.patch", "path": "activities/{activityId}/visibility", "httpMethod": "PATCH", "parameters": {"activityId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Visibility"}, "response": {"$ref": "Visibility"}, "scopes": ["https://www.googleapis.com/auth/orkut"]}, "update": {"id": "orkut.activityVisibility.update", "path": "activities/{activityId}/visibility", "httpMethod": "PUT", "parameters": {"activityId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Visibility"}, "response": {"$ref": "Visibility"}, "scopes": ["https://www.googleapis.com/auth/orkut"]}}}', true));
     $this->badges = new Google_BadgesServiceResource($this, $this->serviceName, 'badges', json_decode('{"methods": {"get": {"id": "orkut.badges.get", "path": "people/{userId}/badges/{badgeId}", "httpMethod": "GET", "parameters": {"badgeId": {"type": "string", "required": true, "format": "int64", "location": "path"}, "userId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Badge"}, "scopes": ["https://www.googleapis.com/auth/orkut", "https://www.googleapis.com/auth/orkut.readonly"]}, "list": {"id": "orkut.badges.list", "path": "people/{userId}/badges", "httpMethod": "GET", "parameters": {"userId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "BadgeList"}, "scopes": ["https://www.googleapis.com/auth/orkut", "https://www.googleapis.com/auth/orkut.readonly"]}}}', true));
-    $this->comments = new Google_CommentsServiceResource($this, $this->serviceName, 'comments', json_decode('{"methods": {"delete": {"id": "orkut.comments.delete", "path": "comments/{commentId}", "httpMethod": "DELETE", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/orkut"]}, "get": {"id": "orkut.comments.get", "path": "comments/{commentId}", "httpMethod": "GET", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "hl": {"type": "string", "location": "query"}}, "response": {"$ref": "Comment"}, "scopes": ["https://www.googleapis.com/auth/orkut", "https://www.googleapis.com/auth/orkut.readonly"]}, "insert": {"id": "orkut.comments.insert", "path": "activities/{activityId}/comments", "httpMethod": "POST", "parameters": {"activityId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Comment"}, "response": {"$ref": "Comment"}, "scopes": ["https://www.googleapis.com/auth/orkut"]}, "list": {"id": "orkut.comments.list", "path": "activities/{activityId}/comments", "httpMethod": "GET", "parameters": {"activityId": {"type": "string", "required": true, "location": "path"}, "hl": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "1", "location": "query"}, "orderBy": {"type": "string", "default": "DESCENDING_SORT", "enum": ["ascending", "descending"], "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "CommentList"}, "scopes": ["https://www.googleapis.com/auth/orkut", "https://www.googleapis.com/auth/orkut.readonly"]}}}', true));
+    $this->comments = new Google_Orkut_CommentsServiceResource($this, $this->serviceName, 'comments', json_decode('{"methods": {"delete": {"id": "orkut.comments.delete", "path": "comments/{commentId}", "httpMethod": "DELETE", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/orkut"]}, "get": {"id": "orkut.comments.get", "path": "comments/{commentId}", "httpMethod": "GET", "parameters": {"commentId": {"type": "string", "required": true, "location": "path"}, "hl": {"type": "string", "location": "query"}}, "response": {"$ref": "Comment"}, "scopes": ["https://www.googleapis.com/auth/orkut", "https://www.googleapis.com/auth/orkut.readonly"]}, "insert": {"id": "orkut.comments.insert", "path": "activities/{activityId}/comments", "httpMethod": "POST", "parameters": {"activityId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Comment"}, "response": {"$ref": "Comment"}, "scopes": ["https://www.googleapis.com/auth/orkut"]}, "list": {"id": "orkut.comments.list", "path": "activities/{activityId}/comments", "httpMethod": "GET", "parameters": {"activityId": {"type": "string", "required": true, "location": "path"}, "hl": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "1", "location": "query"}, "orderBy": {"type": "string", "default": "DESCENDING_SORT", "enum": ["ascending", "descending"], "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "CommentList"}, "scopes": ["https://www.googleapis.com/auth/orkut", "https://www.googleapis.com/auth/orkut.readonly"]}}}', true));
     $this->communities = new Google_CommunitiesServiceResource($this, $this->serviceName, 'communities', json_decode('{"methods": {"get": {"id": "orkut.communities.get", "path": "communities/{communityId}", "httpMethod": "GET", "parameters": {"communityId": {"type": "integer", "required": true, "format": "int32", "location": "path"}, "hl": {"type": "string", "location": "query"}}, "response": {"$ref": "Community"}, "scopes": ["https://www.googleapis.com/auth/orkut", "https://www.googleapis.com/auth/orkut.readonly"]}, "list": {"id": "orkut.communities.list", "path": "people/{userId}/communities", "httpMethod": "GET", "parameters": {"hl": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "1", "location": "query"}, "orderBy": {"type": "string", "enum": ["id", "ranked"], "location": "query"}, "userId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "CommunityList"}, "scopes": ["https://www.googleapis.com/auth/orkut", "https://www.googleapis.com/auth/orkut.readonly"]}}}', true));
     $this->communityFollow = new Google_CommunityFollowServiceResource($this, $this->serviceName, 'communityFollow', json_decode('{"methods": {"delete": {"id": "orkut.communityFollow.delete", "path": "communities/{communityId}/followers/{userId}", "httpMethod": "DELETE", "parameters": {"communityId": {"type": "integer", "required": true, "format": "int32", "location": "path"}, "userId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/orkut"]}, "insert": {"id": "orkut.communityFollow.insert", "path": "communities/{communityId}/followers/{userId}", "httpMethod": "POST", "parameters": {"communityId": {"type": "integer", "required": true, "format": "int32", "location": "path"}, "userId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "CommunityMembers"}, "scopes": ["https://www.googleapis.com/auth/orkut"]}}}', true));
     $this->communityMembers = new Google_CommunityMembersServiceResource($this, $this->serviceName, 'communityMembers', json_decode('{"methods": {"delete": {"id": "orkut.communityMembers.delete", "path": "communities/{communityId}/members/{userId}", "httpMethod": "DELETE", "parameters": {"communityId": {"type": "integer", "required": true, "format": "int32", "location": "path"}, "userId": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/orkut"]}, "get": {"id": "orkut.communityMembers.get", "path": "communities/{communityId}/members/{userId}", "httpMethod": "GET", "parameters": {"communityId": {"type": "integer", "required": true, "format": "int32", "location": "path"}, "hl": {"type": "string", "location": "query"}, "userId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "CommunityMembers"}, "scopes": ["https://www.googleapis.com/auth/orkut", "https://www.googleapis.com/auth/orkut.readonly"]}, "insert": {"id": "orkut.communityMembers.insert", "path": "communities/{communityId}/members/{userId}", "httpMethod": "POST", "parameters": {"communityId": {"type": "integer", "required": true, "format": "int32", "location": "path"}, "userId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "CommunityMembers"}, "scopes": ["https://www.googleapis.com/auth/orkut"]}, "list": {"id": "orkut.communityMembers.list", "path": "communities/{communityId}/members", "httpMethod": "GET", "parameters": {"communityId": {"type": "integer", "required": true, "format": "int32", "location": "path"}, "friendsOnly": {"type": "boolean", "location": "query"}, "hl": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "1", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "CommunityMembersList"}, "scopes": ["https://www.googleapis.com/auth/orkut", "https://www.googleapis.com/auth/orkut.readonly"]}}}', true));
@@ -906,7 +905,7 @@ class Google_OrkutService extends Google_Service {
 
 
 
-class Google_Acl extends Google_Model {
+class Google_Orkut_Acl extends Google_Model {
   public $description;
   protected $__itemsType = 'Google_AclItems';
   protected $__itemsDataType = 'array';
@@ -957,7 +956,7 @@ class Google_AclItems extends Google_Model {
   }
 }
 
-class Google_Activity extends Google_Model {
+class Google_Orkut_Activity extends Google_Model {
   protected $__accessType = 'Google_Acl';
   protected $__accessDataType = '';
   public $access;
@@ -976,7 +975,7 @@ class Google_Activity extends Google_Model {
   public $title;
   public $updated;
   public $verb;
-  public function setAccess(Google_Acl $access) {
+  public function setAccess(Google_Orkut_Acl $access) {
     $this->access = $access;
   }
   public function getAccess() {
@@ -1007,7 +1006,7 @@ class Google_Activity extends Google_Model {
   public function getLinks() {
     return $this->links;
   }
-  public function setObject(Google_ActivityObject $object) {
+  public function setObject(Google_Orkut_ActivityObject $object) {
     $this->object = $object;
   }
   public function getObject() {
@@ -1066,7 +1065,7 @@ class Google_ActivityList extends Google_Model {
   }
 }
 
-class Google_ActivityObject extends Google_Model {
+class Google_Orkut_ActivityObject extends Google_Model {
   public $content;
   protected $__itemsType = 'Google_OrkutActivityobjectsResource';
   protected $__itemsDataType = 'array';
@@ -1094,7 +1093,7 @@ class Google_ActivityObject extends Google_Model {
   public function getObjectType() {
     return $this->objectType;
   }
-  public function setReplies(Google_ActivityObjectReplies $replies) {
+  public function setReplies(Google_Orkut_ActivityObjectReplies $replies) {
     $this->replies = $replies;
   }
   public function getReplies() {
@@ -1102,7 +1101,7 @@ class Google_ActivityObject extends Google_Model {
   }
 }
 
-class Google_ActivityObjectReplies extends Google_Model {
+class Google_Orkut_ActivityObjectReplies extends Google_Model {
   protected $__itemsType = 'Google_Comment';
   protected $__itemsDataType = 'array';
   public $items;
@@ -1215,7 +1214,7 @@ class Google_BadgeList extends Google_Model {
   }
 }
 
-class Google_Comment extends Google_Model {
+class Google_Orkut_Comment extends Google_Model {
   protected $__actorType = 'Google_OrkutAuthorResource';
   protected $__actorDataType = '';
   public $actor;
@@ -1247,7 +1246,7 @@ class Google_Comment extends Google_Model {
   public function getId() {
     return $this->id;
   }
-  public function setInReplyTo(Google_CommentInReplyTo $inReplyTo) {
+  public function setInReplyTo(Google_Orkut_CommentInReplyTo $inReplyTo) {
     $this->inReplyTo = $inReplyTo;
   }
   public function getInReplyTo() {
@@ -1274,7 +1273,7 @@ class Google_Comment extends Google_Model {
   }
 }
 
-class Google_CommentInReplyTo extends Google_Model {
+class Google_Orkut_CommentInReplyTo extends Google_Model {
   public $href;
   public $ref;
   public $rel;
@@ -1305,7 +1304,7 @@ class Google_CommentInReplyTo extends Google_Model {
   }
 }
 
-class Google_CommentList extends Google_Model {
+class Google_Orkut_CommentList extends Google_Model {
   protected $__itemsType = 'Google_Comment';
   protected $__itemsDataType = 'array';
   public $items;

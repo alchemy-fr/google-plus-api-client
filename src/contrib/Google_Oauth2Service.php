@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "userinfo" collection of methods.
    * Typical usage is:

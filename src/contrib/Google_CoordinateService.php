@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "customFieldDef" collection of methods.
    * Typical usage is:
@@ -51,7 +50,7 @@
    *   $jobs = $coordinateService->jobs;
    *  </code>
    */
-  class Google_JobsServiceResource extends Google_ServiceResource {
+  class Google_Coordinate_JobsServiceResource extends Google_ServiceResource {
 
     /**
      * Retrieves a job, including all the changes made to the job. (jobs.get)
@@ -59,14 +58,14 @@
      * @param string $teamId Team ID
      * @param string $jobId Job number
      * @param array $optParams Optional parameters.
-     * @return Google_Job
+     * @return Google_Coordinate_Job
      */
     public function get($teamId, $jobId, $optParams = array()) {
       $params = array('teamId' => $teamId, 'jobId' => $jobId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Job($data);
+        return new Google_Coordinate_Job($data);
       } else {
         return $data;
       }
@@ -79,7 +78,7 @@
      * @param double $lat The latitude coordinate of this job's location.
      * @param double $lng The longitude coordinate of this job's location.
      * @param string $title Job title
-     * @param Google_Job $postBody
+     * @param Google_Coordinate_Job $postBody
      * @param array $optParams Optional parameters.
      *
      * @opt_param string assignee Assignee email address, or empty string to unassign.
@@ -87,14 +86,14 @@
      * @opt_param string customerName Customer name
      * @opt_param string customerPhoneNumber Customer phone number
      * @opt_param string note Job note as newline (Unix) separated string
-     * @return Google_Job
+     * @return Google_Coordinate_Job
      */
-    public function insert($teamId, $address, $lat, $lng, $title, Google_Job $postBody, $optParams = array()) {
+    public function insert($teamId, $address, $lat, $lng, $title, Google_Coordinate_Job $postBody, $optParams = array()) {
       $params = array('teamId' => $teamId, 'address' => $address, 'lat' => $lat, 'lng' => $lng, 'title' => $title, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Job($data);
+        return new Google_Coordinate_Job($data);
       } else {
         return $data;
       }
@@ -126,7 +125,7 @@
      *
      * @param string $teamId Team ID
      * @param string $jobId Job number
-     * @param Google_Job $postBody
+     * @param Google_Coordinate_Job $postBody
      * @param array $optParams Optional parameters.
      *
      * @opt_param string address Job address as newline (Unix) separated string
@@ -139,14 +138,14 @@
      * @opt_param string note Job note as newline (Unix) separated string
      * @opt_param string progress Job progress
      * @opt_param string title Job title
-     * @return Google_Job
+     * @return Google_Coordinate_Job
      */
-    public function patch($teamId, $jobId, Google_Job $postBody, $optParams = array()) {
+    public function patch($teamId, $jobId, Google_Coordinate_Job $postBody, $optParams = array()) {
       $params = array('teamId' => $teamId, 'jobId' => $jobId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_Job($data);
+        return new Google_Coordinate_Job($data);
       } else {
         return $data;
       }
@@ -156,7 +155,7 @@
      *
      * @param string $teamId Team ID
      * @param string $jobId Job number
-     * @param Google_Job $postBody
+     * @param Google_Coordinate_Job $postBody
      * @param array $optParams Optional parameters.
      *
      * @opt_param string address Job address as newline (Unix) separated string
@@ -169,14 +168,14 @@
      * @opt_param string note Job note as newline (Unix) separated string
      * @opt_param string progress Job progress
      * @opt_param string title Job title
-     * @return Google_Job
+     * @return Google_Coordinate_Job
      */
-    public function update($teamId, $jobId, Google_Job $postBody, $optParams = array()) {
+    public function update($teamId, $jobId, Google_Coordinate_Job $postBody, $optParams = array()) {
       $params = array('teamId' => $teamId, 'jobId' => $jobId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Job($data);
+        return new Google_Coordinate_Job($data);
       } else {
         return $data;
       }
@@ -191,7 +190,7 @@
    *   $location = $coordinateService->location;
    *  </code>
    */
-  class Google_LocationServiceResource extends Google_ServiceResource {
+  class Google_Coordinate_LocationServiceResource extends Google_ServiceResource {
 
     /**
      * Retrieves a list of locations for a worker. (location.list)
@@ -357,8 +356,8 @@ class Google_CoordinateService extends Google_Service {
 
     $client->addService($this->serviceName, $this->version);
     $this->customFieldDef = new Google_CustomFieldDefServiceResource($this, $this->serviceName, 'customFieldDef', json_decode('{"methods": {"list": {"id": "coordinate.customFieldDef.list", "path": "{teamId}/custom_fields", "httpMethod": "GET", "parameters": {"teamId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "CustomFieldDefListResponse"}, "scopes": ["https://www.googleapis.com/auth/coordinate", "https://www.googleapis.com/auth/coordinate.readonly"]}}}', true));
-    $this->jobs = new Google_JobsServiceResource($this, $this->serviceName, 'jobs', json_decode('{"methods": {"get": {"id": "coordinate.jobs.get", "path": "{teamId}/jobs/{jobId}", "httpMethod": "GET", "parameters": {"jobId": {"type": "string", "required": true, "format": "uint64", "location": "path"}, "teamId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Job"}, "scopes": ["https://www.googleapis.com/auth/coordinate", "https://www.googleapis.com/auth/coordinate.readonly"]}, "insert": {"id": "coordinate.jobs.insert", "path": "{teamId}/jobs", "httpMethod": "POST", "parameters": {"address": {"type": "string", "required": true, "location": "query"}, "assignee": {"type": "string", "location": "query"}, "customField": {"type": "string", "repeated": true, "location": "query"}, "customerName": {"type": "string", "location": "query"}, "customerPhoneNumber": {"type": "string", "location": "query"}, "lat": {"type": "number", "required": true, "format": "double", "location": "query"}, "lng": {"type": "number", "required": true, "format": "double", "location": "query"}, "note": {"type": "string", "location": "query"}, "teamId": {"type": "string", "required": true, "location": "path"}, "title": {"type": "string", "required": true, "location": "query"}}, "request": {"$ref": "Job"}, "response": {"$ref": "Job"}, "scopes": ["https://www.googleapis.com/auth/coordinate"]}, "list": {"id": "coordinate.jobs.list", "path": "{teamId}/jobs", "httpMethod": "GET", "parameters": {"maxResults": {"type": "integer", "format": "uint32", "location": "query"}, "minModifiedTimestampMs": {"type": "string", "format": "uint64", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "teamId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "JobListResponse"}, "scopes": ["https://www.googleapis.com/auth/coordinate", "https://www.googleapis.com/auth/coordinate.readonly"]}, "patch": {"id": "coordinate.jobs.patch", "path": "{teamId}/jobs/{jobId}", "httpMethod": "PATCH", "parameters": {"address": {"type": "string", "location": "query"}, "assignee": {"type": "string", "location": "query"}, "customField": {"type": "string", "repeated": true, "location": "query"}, "customerName": {"type": "string", "location": "query"}, "customerPhoneNumber": {"type": "string", "location": "query"}, "jobId": {"type": "string", "required": true, "format": "uint64", "location": "path"}, "lat": {"type": "number", "format": "double", "location": "query"}, "lng": {"type": "number", "format": "double", "location": "query"}, "note": {"type": "string", "location": "query"}, "progress": {"type": "string", "enum": ["COMPLETED", "IN_PROGRESS", "NOT_ACCEPTED", "NOT_STARTED", "OBSOLETE"], "location": "query"}, "teamId": {"type": "string", "required": true, "location": "path"}, "title": {"type": "string", "location": "query"}}, "request": {"$ref": "Job"}, "response": {"$ref": "Job"}, "scopes": ["https://www.googleapis.com/auth/coordinate"]}, "update": {"id": "coordinate.jobs.update", "path": "{teamId}/jobs/{jobId}", "httpMethod": "PUT", "parameters": {"address": {"type": "string", "location": "query"}, "assignee": {"type": "string", "location": "query"}, "customField": {"type": "string", "repeated": true, "location": "query"}, "customerName": {"type": "string", "location": "query"}, "customerPhoneNumber": {"type": "string", "location": "query"}, "jobId": {"type": "string", "required": true, "format": "uint64", "location": "path"}, "lat": {"type": "number", "format": "double", "location": "query"}, "lng": {"type": "number", "format": "double", "location": "query"}, "note": {"type": "string", "location": "query"}, "progress": {"type": "string", "enum": ["COMPLETED", "IN_PROGRESS", "NOT_ACCEPTED", "NOT_STARTED", "OBSOLETE"], "location": "query"}, "teamId": {"type": "string", "required": true, "location": "path"}, "title": {"type": "string", "location": "query"}}, "request": {"$ref": "Job"}, "response": {"$ref": "Job"}, "scopes": ["https://www.googleapis.com/auth/coordinate"]}}}', true));
-    $this->location = new Google_LocationServiceResource($this, $this->serviceName, 'location', json_decode('{"methods": {"list": {"id": "coordinate.location.list", "path": "{teamId}/workers/{workerEmail}/locations", "httpMethod": "GET", "parameters": {"maxResults": {"type": "integer", "format": "uint32", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "startTimestampMs": {"type": "string", "required": true, "format": "uint64", "location": "query"}, "teamId": {"type": "string", "required": true, "location": "path"}, "workerEmail": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "LocationListResponse"}, "scopes": ["https://www.googleapis.com/auth/coordinate", "https://www.googleapis.com/auth/coordinate.readonly"]}}}', true));
+    $this->jobs = new Google_Coordinate_JobsServiceResource($this, $this->serviceName, 'jobs', json_decode('{"methods": {"get": {"id": "coordinate.jobs.get", "path": "{teamId}/jobs/{jobId}", "httpMethod": "GET", "parameters": {"jobId": {"type": "string", "required": true, "format": "uint64", "location": "path"}, "teamId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Job"}, "scopes": ["https://www.googleapis.com/auth/coordinate", "https://www.googleapis.com/auth/coordinate.readonly"]}, "insert": {"id": "coordinate.jobs.insert", "path": "{teamId}/jobs", "httpMethod": "POST", "parameters": {"address": {"type": "string", "required": true, "location": "query"}, "assignee": {"type": "string", "location": "query"}, "customField": {"type": "string", "repeated": true, "location": "query"}, "customerName": {"type": "string", "location": "query"}, "customerPhoneNumber": {"type": "string", "location": "query"}, "lat": {"type": "number", "required": true, "format": "double", "location": "query"}, "lng": {"type": "number", "required": true, "format": "double", "location": "query"}, "note": {"type": "string", "location": "query"}, "teamId": {"type": "string", "required": true, "location": "path"}, "title": {"type": "string", "required": true, "location": "query"}}, "request": {"$ref": "Job"}, "response": {"$ref": "Job"}, "scopes": ["https://www.googleapis.com/auth/coordinate"]}, "list": {"id": "coordinate.jobs.list", "path": "{teamId}/jobs", "httpMethod": "GET", "parameters": {"maxResults": {"type": "integer", "format": "uint32", "location": "query"}, "minModifiedTimestampMs": {"type": "string", "format": "uint64", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "teamId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "JobListResponse"}, "scopes": ["https://www.googleapis.com/auth/coordinate", "https://www.googleapis.com/auth/coordinate.readonly"]}, "patch": {"id": "coordinate.jobs.patch", "path": "{teamId}/jobs/{jobId}", "httpMethod": "PATCH", "parameters": {"address": {"type": "string", "location": "query"}, "assignee": {"type": "string", "location": "query"}, "customField": {"type": "string", "repeated": true, "location": "query"}, "customerName": {"type": "string", "location": "query"}, "customerPhoneNumber": {"type": "string", "location": "query"}, "jobId": {"type": "string", "required": true, "format": "uint64", "location": "path"}, "lat": {"type": "number", "format": "double", "location": "query"}, "lng": {"type": "number", "format": "double", "location": "query"}, "note": {"type": "string", "location": "query"}, "progress": {"type": "string", "enum": ["COMPLETED", "IN_PROGRESS", "NOT_ACCEPTED", "NOT_STARTED", "OBSOLETE"], "location": "query"}, "teamId": {"type": "string", "required": true, "location": "path"}, "title": {"type": "string", "location": "query"}}, "request": {"$ref": "Job"}, "response": {"$ref": "Job"}, "scopes": ["https://www.googleapis.com/auth/coordinate"]}, "update": {"id": "coordinate.jobs.update", "path": "{teamId}/jobs/{jobId}", "httpMethod": "PUT", "parameters": {"address": {"type": "string", "location": "query"}, "assignee": {"type": "string", "location": "query"}, "customField": {"type": "string", "repeated": true, "location": "query"}, "customerName": {"type": "string", "location": "query"}, "customerPhoneNumber": {"type": "string", "location": "query"}, "jobId": {"type": "string", "required": true, "format": "uint64", "location": "path"}, "lat": {"type": "number", "format": "double", "location": "query"}, "lng": {"type": "number", "format": "double", "location": "query"}, "note": {"type": "string", "location": "query"}, "progress": {"type": "string", "enum": ["COMPLETED", "IN_PROGRESS", "NOT_ACCEPTED", "NOT_STARTED", "OBSOLETE"], "location": "query"}, "teamId": {"type": "string", "required": true, "location": "path"}, "title": {"type": "string", "location": "query"}}, "request": {"$ref": "Job"}, "response": {"$ref": "Job"}, "scopes": ["https://www.googleapis.com/auth/coordinate"]}}}', true));
+    $this->location = new Google_Coordinate_LocationServiceResource($this, $this->serviceName, 'location', json_decode('{"methods": {"list": {"id": "coordinate.location.list", "path": "{teamId}/workers/{workerEmail}/locations", "httpMethod": "GET", "parameters": {"maxResults": {"type": "integer", "format": "uint32", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "startTimestampMs": {"type": "string", "required": true, "format": "uint64", "location": "query"}, "teamId": {"type": "string", "required": true, "location": "path"}, "workerEmail": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "LocationListResponse"}, "scopes": ["https://www.googleapis.com/auth/coordinate", "https://www.googleapis.com/auth/coordinate.readonly"]}}}', true));
     $this->schedule = new Google_ScheduleServiceResource($this, $this->serviceName, 'schedule', json_decode('{"methods": {"get": {"id": "coordinate.schedule.get", "path": "{teamId}/jobs/{jobId}/schedule", "httpMethod": "GET", "parameters": {"jobId": {"type": "string", "required": true, "format": "uint64", "location": "path"}, "teamId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Schedule"}, "scopes": ["https://www.googleapis.com/auth/coordinate", "https://www.googleapis.com/auth/coordinate.readonly"]}, "patch": {"id": "coordinate.schedule.patch", "path": "{teamId}/jobs/{jobId}/schedule", "httpMethod": "PATCH", "parameters": {"allDay": {"type": "boolean", "location": "query"}, "duration": {"type": "string", "format": "uint64", "location": "query"}, "endTime": {"type": "string", "format": "uint64", "location": "query"}, "jobId": {"type": "string", "required": true, "format": "uint64", "location": "path"}, "startTime": {"type": "string", "format": "uint64", "location": "query"}, "teamId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Schedule"}, "response": {"$ref": "Schedule"}, "scopes": ["https://www.googleapis.com/auth/coordinate"]}, "update": {"id": "coordinate.schedule.update", "path": "{teamId}/jobs/{jobId}/schedule", "httpMethod": "PUT", "parameters": {"allDay": {"type": "boolean", "location": "query"}, "duration": {"type": "string", "format": "uint64", "location": "query"}, "endTime": {"type": "string", "format": "uint64", "location": "query"}, "jobId": {"type": "string", "required": true, "format": "uint64", "location": "path"}, "startTime": {"type": "string", "format": "uint64", "location": "query"}, "teamId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Schedule"}, "response": {"$ref": "Schedule"}, "scopes": ["https://www.googleapis.com/auth/coordinate"]}}}', true));
     $this->worker = new Google_WorkerServiceResource($this, $this->serviceName, 'worker', json_decode('{"methods": {"list": {"id": "coordinate.worker.list", "path": "{teamId}/workers", "httpMethod": "GET", "parameters": {"teamId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "WorkerListResponse"}, "scopes": ["https://www.googleapis.com/auth/coordinate", "https://www.googleapis.com/auth/coordinate.readonly"]}}}', true));
 
@@ -476,7 +475,7 @@ class Google_CustomFields extends Google_Model {
   }
 }
 
-class Google_Job extends Google_Model {
+class Google_Coordinate_Job extends Google_Model {
   public $id;
   protected $__jobChangeType = 'Google_JobChange';
   protected $__jobChangeDataType = 'array';
@@ -609,7 +608,7 @@ class Google_JobState extends Google_Model {
   public function getKind() {
     return $this->kind;
   }
-  public function setLocation(Google_Location $location) {
+  public function setLocation(Google_Coordinate_Location $location) {
     $this->location = $location;
   }
   public function getLocation() {
@@ -636,7 +635,7 @@ class Google_JobState extends Google_Model {
   }
 }
 
-class Google_Location extends Google_Model {
+class Google_Coordinate_Location extends Google_Model {
   public $addressLine;
   public $kind;
   public $lat;

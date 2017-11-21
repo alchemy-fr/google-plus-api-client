@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "accounts" collection of methods.
    * Typical usage is:

@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "products" collection of methods.
    * Typical usage is:

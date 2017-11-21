@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "blogUserInfos" collection of methods.
    * Typical usage is:

@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "states" collection of methods.
    * Typical usage is:

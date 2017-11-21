@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "currentLocation" collection of methods.
    * Typical usage is:

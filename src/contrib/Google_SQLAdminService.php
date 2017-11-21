@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "backupRuns" collection of methods.
    * Typical usage is:
@@ -585,7 +584,7 @@ class Google_DatabaseInstance extends Google_Model {
   public function getRegion() {
     return $this->region;
   }
-  public function setSettings(Google_Settings $settings) {
+  public function setSettings(Google_SQLAdmin_Settings $settings) {
     $this->settings = $settings;
   }
   public function getSettings() {
@@ -965,7 +964,7 @@ class Google_OperationsListResponse extends Google_Model {
   }
 }
 
-class Google_Settings extends Google_Model {
+class Google_SQLAdmin_Settings extends Google_Model {
   public $activationPolicy;
   public $authorizedGaeApplications;
   protected $__backupConfigurationType = 'Google_BackupConfiguration';
