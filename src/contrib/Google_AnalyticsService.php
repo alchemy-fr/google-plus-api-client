@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "data" collection of methods.
    * Typical usage is:
@@ -131,14 +130,14 @@
      *
      * @opt_param int max-results The maximum number of accounts to include in this response.
      * @opt_param int start-index An index of the first account to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
-     * @return Google_Accounts
+     * @return Google_Analytics_Accounts
      */
     public function listManagementAccounts($optParams = array()) {
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_Accounts($data);
+        return new Google_Analytics_Accounts($data);
       } else {
         return $data;
       }
@@ -560,7 +559,7 @@ class Google_AnalyticsService extends Google_Service {
 
 
 
-class Google_Account extends Google_Model {
+class Google_Analytics_Account extends Google_Model {
   protected $__childLinkType = 'Google_AccountChildLink';
   protected $__childLinkDataType = '';
   public $childLink;
@@ -631,7 +630,7 @@ class Google_AccountChildLink extends Google_Model {
   }
 }
 
-class Google_Accounts extends Google_Model {
+class Google_Analytics_Accounts extends Google_Model {
   protected $__itemsType = 'Google_Account';
   protected $__itemsDataType = 'array';
   public $items;

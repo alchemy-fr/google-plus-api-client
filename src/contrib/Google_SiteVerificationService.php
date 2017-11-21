@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "webResource" collection of methods.
    * Typical usage is:

@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "licenseAssignments" collection of methods.
    * Typical usage is:

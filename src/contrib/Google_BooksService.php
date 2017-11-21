@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "bookshelves" collection of methods.
    * Typical usage is:

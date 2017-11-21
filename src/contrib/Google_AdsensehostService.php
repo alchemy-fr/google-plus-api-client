@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "accounts" collection of methods.
    * Typical usage is:
@@ -22,21 +21,21 @@
    *   $accounts = $adsensehostService->accounts;
    *  </code>
    */
-  class Google_AccountsServiceResource extends Google_ServiceResource {
+  class Google_AdsenseHost_AccountsServiceResource extends Google_ServiceResource {
 
     /**
      * Get information about the selected associated AdSense account. (accounts.get)
      *
      * @param string $accountId Account to get information about.
      * @param array $optParams Optional parameters.
-     * @return Google_Account
+     * @return Google_AdsenseHost_Account
      */
     public function get($accountId, $optParams = array()) {
       $params = array('accountId' => $accountId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Account($data);
+        return new Google_AdsenseHost_Account($data);
       } else {
         return $data;
       }
@@ -46,14 +45,14 @@
      *
      * @param string $filterAdClientId Ad clients to list accounts for.
      * @param array $optParams Optional parameters.
-     * @return Google_Accounts
+     * @return Google_AdsenseHost_Accounts
      */
     public function listAccounts($filterAdClientId, $optParams = array()) {
       $params = array('filterAdClientId' => $filterAdClientId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_Accounts($data);
+        return new Google_AdsenseHost_Accounts($data);
       } else {
         return $data;
       }
@@ -68,7 +67,7 @@
    *   $adclients = $adsensehostService->adclients;
    *  </code>
    */
-  class Google_AccountsAdclientsServiceResource extends Google_ServiceResource {
+  class Google_AdsenseHost_AccountsAdclientsServiceResource extends Google_ServiceResource {
 
     /**
      * Get information about one of the ad clients in the specified publisher's AdSense account.
@@ -77,14 +76,14 @@
      * @param string $accountId Account which contains the ad client.
      * @param string $adClientId Ad client to get.
      * @param array $optParams Optional parameters.
-     * @return Google_AdClient
+     * @return Google_AdsenseHost_AdClient
      */
     public function get($accountId, $adClientId, $optParams = array()) {
       $params = array('accountId' => $accountId, 'adClientId' => $adClientId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_AdClient($data);
+        return new Google_AdsenseHost_AdClient($data);
       } else {
         return $data;
       }
@@ -97,14 +96,14 @@
      *
      * @opt_param string maxResults The maximum number of ad clients to include in the response, used for paging.
      * @opt_param string pageToken A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
-     * @return Google_AdClients
+     * @return Google_AdsenseHost_AdClients
      */
     public function listAccountsAdclients($accountId, $optParams = array()) {
       $params = array('accountId' => $accountId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_AdClients($data);
+        return new Google_AdsenseHost_AdClients($data);
       } else {
         return $data;
       }
@@ -118,7 +117,7 @@
    *   $adunits = $adsensehostService->adunits;
    *  </code>
    */
-  class Google_AccountsAdunitsServiceResource extends Google_ServiceResource {
+  class Google_AdsenseHost_AccountsAdunitsServiceResource extends Google_ServiceResource {
 
     /**
      * Delete the specified ad unit from the specified publisher AdSense account. (adunits.delete)
@@ -127,14 +126,14 @@
      * @param string $adClientId Ad client for which to get ad unit.
      * @param string $adUnitId Ad unit to delete.
      * @param array $optParams Optional parameters.
-     * @return Google_AdUnit
+     * @return Google_AdsenseHost_AdUnit
      */
     public function delete($accountId, $adClientId, $adUnitId, $optParams = array()) {
       $params = array('accountId' => $accountId, 'adClientId' => $adClientId, 'adUnitId' => $adUnitId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('delete', array($params));
       if ($this->useObjects()) {
-        return new Google_AdUnit($data);
+        return new Google_AdsenseHost_AdUnit($data);
       } else {
         return $data;
       }
@@ -146,14 +145,14 @@
      * @param string $adClientId Ad client for which to get ad unit.
      * @param string $adUnitId Ad unit to get.
      * @param array $optParams Optional parameters.
-     * @return Google_AdUnit
+     * @return Google_AdsenseHost_AdUnit
      */
     public function get($accountId, $adClientId, $adUnitId, $optParams = array()) {
       $params = array('accountId' => $accountId, 'adClientId' => $adClientId, 'adUnitId' => $adUnitId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_AdUnit($data);
+        return new Google_AdsenseHost_AdUnit($data);
       } else {
         return $data;
       }
@@ -168,14 +167,14 @@
      * @param array $optParams Optional parameters.
      *
      * @opt_param string hostCustomChannelId Host custom channel to attach to the ad code.
-     * @return Google_AdCode
+     * @return Google_AdsenseHost_AdCode
      */
     public function getAdCode($accountId, $adClientId, $adUnitId, $optParams = array()) {
       $params = array('accountId' => $accountId, 'adClientId' => $adClientId, 'adUnitId' => $adUnitId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('getAdCode', array($params));
       if ($this->useObjects()) {
-        return new Google_AdCode($data);
+        return new Google_AdsenseHost_AdCode($data);
       } else {
         return $data;
       }
@@ -185,16 +184,16 @@
      *
      * @param string $accountId Account which will contain the ad unit.
      * @param string $adClientId Ad client into which to insert the ad unit.
-     * @param Google_AdUnit $postBody
+     * @param Google_AdsenseHost_AdUnit $postBody
      * @param array $optParams Optional parameters.
-     * @return Google_AdUnit
+     * @return Google_AdsenseHost_AdUnit
      */
-    public function insert($accountId, $adClientId, Google_AdUnit $postBody, $optParams = array()) {
+    public function insert($accountId, $adClientId, Google_AdsenseHost_AdUnit $postBody, $optParams = array()) {
       $params = array('accountId' => $accountId, 'adClientId' => $adClientId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_AdUnit($data);
+        return new Google_AdsenseHost_AdUnit($data);
       } else {
         return $data;
       }
@@ -209,14 +208,14 @@
      * @opt_param bool includeInactive Whether to include inactive ad units. Default: true.
      * @opt_param string maxResults The maximum number of ad units to include in the response, used for paging.
      * @opt_param string pageToken A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
-     * @return Google_AdUnits
+     * @return Google_AdsenseHost_AdUnits
      */
     public function listAccountsAdunits($accountId, $adClientId, $optParams = array()) {
       $params = array('accountId' => $accountId, 'adClientId' => $adClientId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_AdUnits($data);
+        return new Google_AdsenseHost_AdUnits($data);
       } else {
         return $data;
       }
@@ -228,16 +227,16 @@
      * @param string $accountId Account which contains the ad client.
      * @param string $adClientId Ad client which contains the ad unit.
      * @param string $adUnitId Ad unit to get.
-     * @param Google_AdUnit $postBody
+     * @param Google_AdsenseHost_AdUnit $postBody
      * @param array $optParams Optional parameters.
-     * @return Google_AdUnit
+     * @return Google_AdsenseHost_AdUnit
      */
-    public function patch($accountId, $adClientId, $adUnitId, Google_AdUnit $postBody, $optParams = array()) {
+    public function patch($accountId, $adClientId, $adUnitId, Google_AdsenseHost_AdUnit $postBody, $optParams = array()) {
       $params = array('accountId' => $accountId, 'adClientId' => $adClientId, 'adUnitId' => $adUnitId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_AdUnit($data);
+        return new Google_AdsenseHost_AdUnit($data);
       } else {
         return $data;
       }
@@ -247,16 +246,16 @@
      *
      * @param string $accountId Account which contains the ad client.
      * @param string $adClientId Ad client which contains the ad unit.
-     * @param Google_AdUnit $postBody
+     * @param Google_AdsenseHost_AdUnit $postBody
      * @param array $optParams Optional parameters.
-     * @return Google_AdUnit
+     * @return Google_AdsenseHost_AdUnit
      */
-    public function update($accountId, $adClientId, Google_AdUnit $postBody, $optParams = array()) {
+    public function update($accountId, $adClientId, Google_AdsenseHost_AdUnit $postBody, $optParams = array()) {
       $params = array('accountId' => $accountId, 'adClientId' => $adClientId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_AdUnit($data);
+        return new Google_AdsenseHost_AdUnit($data);
       } else {
         return $data;
       }
@@ -270,7 +269,7 @@
    *   $reports = $adsensehostService->reports;
    *  </code>
    */
-  class Google_AccountsReportsServiceResource extends Google_ServiceResource {
+  class Google_AdsenseHost_AccountsReportsServiceResource extends Google_ServiceResource {
 
     /**
      * Generate an AdSense report based on the report request sent in the query parameters. Returns the
@@ -289,14 +288,14 @@
      * @opt_param string metric Numeric columns to include in the report.
      * @opt_param string sort The name of a dimension or metric to sort the resulting report on, optionally prefixed with "+" to sort ascending or "-" to sort descending. If no prefix is specified, the column is sorted ascending.
      * @opt_param string startIndex Index of the first row of report data to return.
-     * @return Google_Report
+     * @return Google_AdsenseHost_Report
      */
     public function generate($accountId, $startDate, $endDate, $optParams = array()) {
       $params = array('accountId' => $accountId, 'startDate' => $startDate, 'endDate' => $endDate);
       $params = array_merge($params, $optParams);
       $data = $this->__call('generate', array($params));
       if ($this->useObjects()) {
-        return new Google_Report($data);
+        return new Google_AdsenseHost_Report($data);
       } else {
         return $data;
       }
@@ -311,21 +310,21 @@
    *   $adclients = $adsensehostService->adclients;
    *  </code>
    */
-  class Google_AdclientsServiceResource extends Google_ServiceResource {
+  class Google_AdsenseHost_AdclientsServiceResource extends Google_ServiceResource {
 
     /**
      * Get information about one of the ad clients in the Host AdSense account. (adclients.get)
      *
      * @param string $adClientId Ad client to get.
      * @param array $optParams Optional parameters.
-     * @return Google_AdClient
+     * @return Google_AdsenseHost_AdClient
      */
     public function get($adClientId, $optParams = array()) {
       $params = array('adClientId' => $adClientId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_AdClient($data);
+        return new Google_AdsenseHost_AdClient($data);
       } else {
         return $data;
       }
@@ -337,14 +336,14 @@
      *
      * @opt_param string maxResults The maximum number of ad clients to include in the response, used for paging.
      * @opt_param string pageToken A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
-     * @return Google_AdClients
+     * @return Google_AdsenseHost_AdClients
      */
     public function listAdclients($optParams = array()) {
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_AdClients($data);
+        return new Google_AdsenseHost_AdClients($data);
       } else {
         return $data;
       }
@@ -411,7 +410,7 @@
    *   $customchannels = $adsensehostService->customchannels;
    *  </code>
    */
-  class Google_CustomchannelsServiceResource extends Google_ServiceResource {
+  class Google_AdsenseHost_CustomchannelsServiceResource extends Google_ServiceResource {
 
     /**
      * Delete a specific custom channel from the host AdSense account. (customchannels.delete)
@@ -419,14 +418,14 @@
      * @param string $adClientId Ad client from which to delete the custom channel.
      * @param string $customChannelId Custom channel to delete.
      * @param array $optParams Optional parameters.
-     * @return Google_CustomChannel
+     * @return Google_AdsenseHost_CustomChannel
      */
     public function delete($adClientId, $customChannelId, $optParams = array()) {
       $params = array('adClientId' => $adClientId, 'customChannelId' => $customChannelId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('delete', array($params));
       if ($this->useObjects()) {
-        return new Google_CustomChannel($data);
+        return new Google_AdsenseHost_CustomChannel($data);
       } else {
         return $data;
       }
@@ -437,14 +436,14 @@
      * @param string $adClientId Ad client from which to get the custom channel.
      * @param string $customChannelId Custom channel to get.
      * @param array $optParams Optional parameters.
-     * @return Google_CustomChannel
+     * @return Google_AdsenseHost_CustomChannel
      */
     public function get($adClientId, $customChannelId, $optParams = array()) {
       $params = array('adClientId' => $adClientId, 'customChannelId' => $customChannelId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_CustomChannel($data);
+        return new Google_AdsenseHost_CustomChannel($data);
       } else {
         return $data;
       }
@@ -453,16 +452,16 @@
      * Add a new custom channel to the host AdSense account. (customchannels.insert)
      *
      * @param string $adClientId Ad client to which the new custom channel will be added.
-     * @param Google_CustomChannel $postBody
+     * @param Google_AdsenseHost_CustomChannel $postBody
      * @param array $optParams Optional parameters.
-     * @return Google_CustomChannel
+     * @return Google_AdsenseHost_CustomChannel
      */
-    public function insert($adClientId, Google_CustomChannel $postBody, $optParams = array()) {
+    public function insert($adClientId, Google_AdsenseHost_CustomChannel $postBody, $optParams = array()) {
       $params = array('adClientId' => $adClientId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_CustomChannel($data);
+        return new Google_AdsenseHost_CustomChannel($data);
       } else {
         return $data;
       }
@@ -475,14 +474,14 @@
      *
      * @opt_param string maxResults The maximum number of custom channels to include in the response, used for paging.
      * @opt_param string pageToken A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
-     * @return Google_CustomChannels
+     * @return Google_AdsenseHost_CustomChannels
      */
     public function listCustomchannels($adClientId, $optParams = array()) {
       $params = array('adClientId' => $adClientId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_CustomChannels($data);
+        return new Google_AdsenseHost_CustomChannels($data);
       } else {
         return $data;
       }
@@ -493,16 +492,16 @@
      *
      * @param string $adClientId Ad client in which the custom channel will be updated.
      * @param string $customChannelId Custom channel to get.
-     * @param Google_CustomChannel $postBody
+     * @param Google_AdsenseHost_CustomChannel $postBody
      * @param array $optParams Optional parameters.
-     * @return Google_CustomChannel
+     * @return Google_AdsenseHost_CustomChannel
      */
-    public function patch($adClientId, $customChannelId, Google_CustomChannel $postBody, $optParams = array()) {
+    public function patch($adClientId, $customChannelId, Google_AdsenseHost_CustomChannel $postBody, $optParams = array()) {
       $params = array('adClientId' => $adClientId, 'customChannelId' => $customChannelId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_CustomChannel($data);
+        return new Google_AdsenseHost_CustomChannel($data);
       } else {
         return $data;
       }
@@ -511,16 +510,16 @@
      * Update a custom channel in the host AdSense account. (customchannels.update)
      *
      * @param string $adClientId Ad client in which the custom channel will be updated.
-     * @param Google_CustomChannel $postBody
+     * @param Google_AdsenseHost_CustomChannel $postBody
      * @param array $optParams Optional parameters.
-     * @return Google_CustomChannel
+     * @return Google_AdsenseHost_CustomChannel
      */
-    public function update($adClientId, Google_CustomChannel $postBody, $optParams = array()) {
+    public function update($adClientId, Google_AdsenseHost_CustomChannel $postBody, $optParams = array()) {
       $params = array('adClientId' => $adClientId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_CustomChannel($data);
+        return new Google_AdsenseHost_CustomChannel($data);
       } else {
         return $data;
       }
@@ -535,7 +534,7 @@
    *   $reports = $adsensehostService->reports;
    *  </code>
    */
-  class Google_ReportsServiceResource extends Google_ServiceResource {
+  class Google_AdsenseHost_ReportsServiceResource extends Google_ServiceResource {
 
     /**
      * Generate an AdSense report based on the report request sent in the query parameters. Returns the
@@ -553,14 +552,14 @@
      * @opt_param string metric Numeric columns to include in the report.
      * @opt_param string sort The name of a dimension or metric to sort the resulting report on, optionally prefixed with "+" to sort ascending or "-" to sort descending. If no prefix is specified, the column is sorted ascending.
      * @opt_param string startIndex Index of the first row of report data to return.
-     * @return Google_Report
+     * @return Google_AdsenseHost_Report
      */
     public function generate($startDate, $endDate, $optParams = array()) {
       $params = array('startDate' => $startDate, 'endDate' => $endDate);
       $params = array_merge($params, $optParams);
       $data = $this->__call('generate', array($params));
       if ($this->useObjects()) {
-        return new Google_Report($data);
+        return new Google_AdsenseHost_Report($data);
       } else {
         return $data;
       }
@@ -575,7 +574,7 @@
    *   $urlchannels = $adsensehostService->urlchannels;
    *  </code>
    */
-  class Google_UrlchannelsServiceResource extends Google_ServiceResource {
+  class Google_AdsenseHost_UrlchannelsServiceResource extends Google_ServiceResource {
 
     /**
      * Delete a URL channel from the host AdSense account. (urlchannels.delete)
@@ -583,14 +582,14 @@
      * @param string $adClientId Ad client from which to delete the URL channel.
      * @param string $urlChannelId URL channel to delete.
      * @param array $optParams Optional parameters.
-     * @return Google_UrlChannel
+     * @return Google_AdsenseHost_UrlChannel
      */
     public function delete($adClientId, $urlChannelId, $optParams = array()) {
       $params = array('adClientId' => $adClientId, 'urlChannelId' => $urlChannelId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('delete', array($params));
       if ($this->useObjects()) {
-        return new Google_UrlChannel($data);
+        return new Google_AdsenseHost_UrlChannel($data);
       } else {
         return $data;
       }
@@ -599,16 +598,16 @@
      * Add a new URL channel to the host AdSense account. (urlchannels.insert)
      *
      * @param string $adClientId Ad client to which the new URL channel will be added.
-     * @param Google_UrlChannel $postBody
+     * @param Google_AdsenseHost_UrlChannel $postBody
      * @param array $optParams Optional parameters.
-     * @return Google_UrlChannel
+     * @return Google_AdsenseHost_UrlChannel
      */
-    public function insert($adClientId, Google_UrlChannel $postBody, $optParams = array()) {
+    public function insert($adClientId, Google_AdsenseHost_UrlChannel $postBody, $optParams = array()) {
       $params = array('adClientId' => $adClientId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_UrlChannel($data);
+        return new Google_AdsenseHost_UrlChannel($data);
       } else {
         return $data;
       }
@@ -621,14 +620,14 @@
      *
      * @opt_param string maxResults The maximum number of URL channels to include in the response, used for paging.
      * @opt_param string pageToken A continuation token, used to page through URL channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
-     * @return Google_UrlChannels
+     * @return Google_AdsenseHost_UrlChannels
      */
     public function listUrlchannels($adClientId, $optParams = array()) {
       $params = array('adClientId' => $adClientId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_UrlChannels($data);
+        return new Google_AdsenseHost_UrlChannels($data);
       } else {
         return $data;
       }
@@ -670,22 +669,22 @@ class Google_AdSenseHostService extends Google_Service {
     $this->serviceName = 'adsensehost';
 
     $client->addService($this->serviceName, $this->version);
-    $this->accounts = new Google_AccountsServiceResource($this, $this->serviceName, 'accounts', json_decode('{"methods": {"get": {"id": "adsensehost.accounts.get", "path": "accounts/{accountId}", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Account"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "list": {"id": "adsensehost.accounts.list", "path": "accounts", "httpMethod": "GET", "parameters": {"filterAdClientId": {"type": "string", "required": true, "repeated": true, "location": "query"}}, "response": {"$ref": "Accounts"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}}}', true));
-    $this->accounts_adclients = new Google_AccountsAdclientsServiceResource($this, $this->serviceName, 'adclients', json_decode('{"methods": {"get": {"id": "adsensehost.accounts.adclients.get", "path": "accounts/{accountId}/adclients/{adClientId}", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "adClientId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "AdClient"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "list": {"id": "adsensehost.accounts.adclients.list", "path": "accounts/{accountId}/adclients", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "AdClients"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}}}', true));
-    $this->accounts_adunits = new Google_AccountsAdunitsServiceResource($this, $this->serviceName, 'adunits', json_decode('{"methods": {"delete": {"id": "adsensehost.accounts.adunits.delete", "path": "accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}", "httpMethod": "DELETE", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "adClientId": {"type": "string", "required": true, "location": "path"}, "adUnitId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "AdUnit"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "get": {"id": "adsensehost.accounts.adunits.get", "path": "accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "adClientId": {"type": "string", "required": true, "location": "path"}, "adUnitId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "AdUnit"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "getAdCode": {"id": "adsensehost.accounts.adunits.getAdCode", "path": "accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}/adcode", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "adClientId": {"type": "string", "required": true, "location": "path"}, "adUnitId": {"type": "string", "required": true, "location": "path"}, "hostCustomChannelId": {"type": "string", "repeated": true, "location": "query"}}, "response": {"$ref": "AdCode"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "insert": {"id": "adsensehost.accounts.adunits.insert", "path": "accounts/{accountId}/adclients/{adClientId}/adunits", "httpMethod": "POST", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "adClientId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "AdUnit"}, "response": {"$ref": "AdUnit"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "list": {"id": "adsensehost.accounts.adunits.list", "path": "accounts/{accountId}/adclients/{adClientId}/adunits", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "adClientId": {"type": "string", "required": true, "location": "path"}, "includeInactive": {"type": "boolean", "location": "query"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "AdUnits"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "patch": {"id": "adsensehost.accounts.adunits.patch", "path": "accounts/{accountId}/adclients/{adClientId}/adunits", "httpMethod": "PATCH", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "adClientId": {"type": "string", "required": true, "location": "path"}, "adUnitId": {"type": "string", "required": true, "location": "query"}}, "request": {"$ref": "AdUnit"}, "response": {"$ref": "AdUnit"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "update": {"id": "adsensehost.accounts.adunits.update", "path": "accounts/{accountId}/adclients/{adClientId}/adunits", "httpMethod": "PUT", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "adClientId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "AdUnit"}, "response": {"$ref": "AdUnit"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}}}', true));
-    $this->accounts_reports = new Google_AccountsReportsServiceResource($this, $this->serviceName, 'reports', json_decode('{"methods": {"generate": {"id": "adsensehost.accounts.reports.generate", "path": "accounts/{accountId}/reports", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "dimension": {"type": "string", "repeated": true, "location": "query"}, "endDate": {"type": "string", "required": true, "location": "query"}, "filter": {"type": "string", "repeated": true, "location": "query"}, "locale": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "50000", "location": "query"}, "metric": {"type": "string", "repeated": true, "location": "query"}, "sort": {"type": "string", "repeated": true, "location": "query"}, "startDate": {"type": "string", "required": true, "location": "query"}, "startIndex": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "5000", "location": "query"}}, "response": {"$ref": "Report"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}}}', true));
-    $this->adclients = new Google_AdclientsServiceResource($this, $this->serviceName, 'adclients', json_decode('{"methods": {"get": {"id": "adsensehost.adclients.get", "path": "adclients/{adClientId}", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "AdClient"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "list": {"id": "adsensehost.adclients.list", "path": "adclients", "httpMethod": "GET", "parameters": {"maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "AdClients"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}}}', true));
+    $this->accounts = new Google_AdsenseHost_AccountsServiceResource($this, $this->serviceName, 'accounts', json_decode('{"methods": {"get": {"id": "adsensehost.accounts.get", "path": "accounts/{accountId}", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "Account"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "list": {"id": "adsensehost.accounts.list", "path": "accounts", "httpMethod": "GET", "parameters": {"filterAdClientId": {"type": "string", "required": true, "repeated": true, "location": "query"}}, "response": {"$ref": "Accounts"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}}}', true));
+    $this->accounts_adclients = new Google_AdsenseHost_AccountsAdclientsServiceResource($this, $this->serviceName, 'adclients', json_decode('{"methods": {"get": {"id": "adsensehost.accounts.adclients.get", "path": "accounts/{accountId}/adclients/{adClientId}", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "adClientId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "AdClient"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "list": {"id": "adsensehost.accounts.adclients.list", "path": "accounts/{accountId}/adclients", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "AdClients"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}}}', true));
+    $this->accounts_adunits = new Google_AdsenseHost_AccountsAdunitsServiceResource($this, $this->serviceName, 'adunits', json_decode('{"methods": {"delete": {"id": "adsensehost.accounts.adunits.delete", "path": "accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}", "httpMethod": "DELETE", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "adClientId": {"type": "string", "required": true, "location": "path"}, "adUnitId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "AdUnit"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "get": {"id": "adsensehost.accounts.adunits.get", "path": "accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "adClientId": {"type": "string", "required": true, "location": "path"}, "adUnitId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "AdUnit"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "getAdCode": {"id": "adsensehost.accounts.adunits.getAdCode", "path": "accounts/{accountId}/adclients/{adClientId}/adunits/{adUnitId}/adcode", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "adClientId": {"type": "string", "required": true, "location": "path"}, "adUnitId": {"type": "string", "required": true, "location": "path"}, "hostCustomChannelId": {"type": "string", "repeated": true, "location": "query"}}, "response": {"$ref": "AdCode"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "insert": {"id": "adsensehost.accounts.adunits.insert", "path": "accounts/{accountId}/adclients/{adClientId}/adunits", "httpMethod": "POST", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "adClientId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "AdUnit"}, "response": {"$ref": "AdUnit"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "list": {"id": "adsensehost.accounts.adunits.list", "path": "accounts/{accountId}/adclients/{adClientId}/adunits", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "adClientId": {"type": "string", "required": true, "location": "path"}, "includeInactive": {"type": "boolean", "location": "query"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "AdUnits"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "patch": {"id": "adsensehost.accounts.adunits.patch", "path": "accounts/{accountId}/adclients/{adClientId}/adunits", "httpMethod": "PATCH", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "adClientId": {"type": "string", "required": true, "location": "path"}, "adUnitId": {"type": "string", "required": true, "location": "query"}}, "request": {"$ref": "AdUnit"}, "response": {"$ref": "AdUnit"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "update": {"id": "adsensehost.accounts.adunits.update", "path": "accounts/{accountId}/adclients/{adClientId}/adunits", "httpMethod": "PUT", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "adClientId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "AdUnit"}, "response": {"$ref": "AdUnit"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}}}', true));
+    $this->accounts_reports = new Google_AdsenseHost_AccountsReportsServiceResource($this, $this->serviceName, 'reports', json_decode('{"methods": {"generate": {"id": "adsensehost.accounts.reports.generate", "path": "accounts/{accountId}/reports", "httpMethod": "GET", "parameters": {"accountId": {"type": "string", "required": true, "location": "path"}, "dimension": {"type": "string", "repeated": true, "location": "query"}, "endDate": {"type": "string", "required": true, "location": "query"}, "filter": {"type": "string", "repeated": true, "location": "query"}, "locale": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "50000", "location": "query"}, "metric": {"type": "string", "repeated": true, "location": "query"}, "sort": {"type": "string", "repeated": true, "location": "query"}, "startDate": {"type": "string", "required": true, "location": "query"}, "startIndex": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "5000", "location": "query"}}, "response": {"$ref": "Report"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}}}', true));
+    $this->adclients = new Google_AdsenseHost_AdclientsServiceResource($this, $this->serviceName, 'adclients', json_decode('{"methods": {"get": {"id": "adsensehost.adclients.get", "path": "adclients/{adClientId}", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "AdClient"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "list": {"id": "adsensehost.adclients.list", "path": "adclients", "httpMethod": "GET", "parameters": {"maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "AdClients"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}}}', true));
     $this->associationsessions = new Google_AssociationsessionsServiceResource($this, $this->serviceName, 'associationsessions', json_decode('{"methods": {"start": {"id": "adsensehost.associationsessions.start", "path": "associationsessions/start", "httpMethod": "GET", "parameters": {"productCode": {"type": "string", "required": true, "enum": ["AFC", "AFG", "AFMC", "AFS", "AFV"], "repeated": true, "location": "query"}, "userLocale": {"type": "string", "location": "query"}, "websiteLocale": {"type": "string", "location": "query"}, "websiteUrl": {"type": "string", "required": true, "location": "query"}}, "response": {"$ref": "AssociationSession"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "verify": {"id": "adsensehost.associationsessions.verify", "path": "associationsessions/verify", "httpMethod": "GET", "parameters": {"token": {"type": "string", "required": true, "location": "query"}}, "response": {"$ref": "AssociationSession"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}}}', true));
-    $this->customchannels = new Google_CustomchannelsServiceResource($this, $this->serviceName, 'customchannels', json_decode('{"methods": {"delete": {"id": "adsensehost.customchannels.delete", "path": "adclients/{adClientId}/customchannels/{customChannelId}", "httpMethod": "DELETE", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "customChannelId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "CustomChannel"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "get": {"id": "adsensehost.customchannels.get", "path": "adclients/{adClientId}/customchannels/{customChannelId}", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "customChannelId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "CustomChannel"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "insert": {"id": "adsensehost.customchannels.insert", "path": "adclients/{adClientId}/customchannels", "httpMethod": "POST", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "CustomChannel"}, "response": {"$ref": "CustomChannel"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "list": {"id": "adsensehost.customchannels.list", "path": "adclients/{adClientId}/customchannels", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "CustomChannels"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "patch": {"id": "adsensehost.customchannels.patch", "path": "adclients/{adClientId}/customchannels", "httpMethod": "PATCH", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "customChannelId": {"type": "string", "required": true, "location": "query"}}, "request": {"$ref": "CustomChannel"}, "response": {"$ref": "CustomChannel"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "update": {"id": "adsensehost.customchannels.update", "path": "adclients/{adClientId}/customchannels", "httpMethod": "PUT", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "CustomChannel"}, "response": {"$ref": "CustomChannel"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}}}', true));
-    $this->reports = new Google_ReportsServiceResource($this, $this->serviceName, 'reports', json_decode('{"methods": {"generate": {"id": "adsensehost.reports.generate", "path": "reports", "httpMethod": "GET", "parameters": {"dimension": {"type": "string", "repeated": true, "location": "query"}, "endDate": {"type": "string", "required": true, "location": "query"}, "filter": {"type": "string", "repeated": true, "location": "query"}, "locale": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "50000", "location": "query"}, "metric": {"type": "string", "repeated": true, "location": "query"}, "sort": {"type": "string", "repeated": true, "location": "query"}, "startDate": {"type": "string", "required": true, "location": "query"}, "startIndex": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "5000", "location": "query"}}, "response": {"$ref": "Report"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}}}', true));
-    $this->urlchannels = new Google_UrlchannelsServiceResource($this, $this->serviceName, 'urlchannels', json_decode('{"methods": {"delete": {"id": "adsensehost.urlchannels.delete", "path": "adclients/{adClientId}/urlchannels/{urlChannelId}", "httpMethod": "DELETE", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "urlChannelId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "UrlChannel"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "insert": {"id": "adsensehost.urlchannels.insert", "path": "adclients/{adClientId}/urlchannels", "httpMethod": "POST", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "UrlChannel"}, "response": {"$ref": "UrlChannel"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "list": {"id": "adsensehost.urlchannels.list", "path": "adclients/{adClientId}/urlchannels", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "UrlChannels"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}}}', true));
+    $this->customchannels = new Google_AdsenseHost_CustomchannelsServiceResource($this, $this->serviceName, 'customchannels', json_decode('{"methods": {"delete": {"id": "adsensehost.customchannels.delete", "path": "adclients/{adClientId}/customchannels/{customChannelId}", "httpMethod": "DELETE", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "customChannelId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "CustomChannel"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "get": {"id": "adsensehost.customchannels.get", "path": "adclients/{adClientId}/customchannels/{customChannelId}", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "customChannelId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "CustomChannel"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "insert": {"id": "adsensehost.customchannels.insert", "path": "adclients/{adClientId}/customchannels", "httpMethod": "POST", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "CustomChannel"}, "response": {"$ref": "CustomChannel"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "list": {"id": "adsensehost.customchannels.list", "path": "adclients/{adClientId}/customchannels", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "CustomChannels"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "patch": {"id": "adsensehost.customchannels.patch", "path": "adclients/{adClientId}/customchannels", "httpMethod": "PATCH", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "customChannelId": {"type": "string", "required": true, "location": "query"}}, "request": {"$ref": "CustomChannel"}, "response": {"$ref": "CustomChannel"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "update": {"id": "adsensehost.customchannels.update", "path": "adclients/{adClientId}/customchannels", "httpMethod": "PUT", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "CustomChannel"}, "response": {"$ref": "CustomChannel"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}}}', true));
+    $this->reports = new Google_AdsenseHost_ReportsServiceResource($this, $this->serviceName, 'reports', json_decode('{"methods": {"generate": {"id": "adsensehost.reports.generate", "path": "reports", "httpMethod": "GET", "parameters": {"dimension": {"type": "string", "repeated": true, "location": "query"}, "endDate": {"type": "string", "required": true, "location": "query"}, "filter": {"type": "string", "repeated": true, "location": "query"}, "locale": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "50000", "location": "query"}, "metric": {"type": "string", "repeated": true, "location": "query"}, "sort": {"type": "string", "repeated": true, "location": "query"}, "startDate": {"type": "string", "required": true, "location": "query"}, "startIndex": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "5000", "location": "query"}}, "response": {"$ref": "Report"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}}}', true));
+    $this->urlchannels = new Google_AdsenseHost_UrlchannelsServiceResource($this, $this->serviceName, 'urlchannels', json_decode('{"methods": {"delete": {"id": "adsensehost.urlchannels.delete", "path": "adclients/{adClientId}/urlchannels/{urlChannelId}", "httpMethod": "DELETE", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "urlChannelId": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "UrlChannel"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "insert": {"id": "adsensehost.urlchannels.insert", "path": "adclients/{adClientId}/urlchannels", "httpMethod": "POST", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "UrlChannel"}, "response": {"$ref": "UrlChannel"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}, "list": {"id": "adsensehost.urlchannels.list", "path": "adclients/{adClientId}/urlchannels", "httpMethod": "GET", "parameters": {"adClientId": {"type": "string", "required": true, "location": "path"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "maximum": "10000", "location": "query"}, "pageToken": {"type": "string", "location": "query"}}, "response": {"$ref": "UrlChannels"}, "scopes": ["https://www.googleapis.com/auth/adsensehost"]}}}', true));
 
   }
 }
 
 
 
-class Google_Account extends Google_Model {
+class Google_AdsenseHost_Account extends Google_Model {
   public $id;
   public $kind;
   public $name;
@@ -716,7 +715,7 @@ class Google_Account extends Google_Model {
   }
 }
 
-class Google_Accounts extends Google_Model {
+class Google_AdsenseHost_Accounts extends Google_Model {
   public $etag;
   protected $__itemsType = 'Google_Account';
   protected $__itemsDataType = 'array';
@@ -743,7 +742,7 @@ class Google_Accounts extends Google_Model {
   }
 }
 
-class Google_AdClient extends Google_Model {
+class Google_AdsenseHost_AdClient extends Google_Model {
   public $arcOptIn;
   public $id;
   public $kind;
@@ -781,7 +780,7 @@ class Google_AdClient extends Google_Model {
   }
 }
 
-class Google_AdClients extends Google_Model {
+class Google_AdsenseHost_AdClients extends Google_Model {
   public $etag;
   protected $__itemsType = 'Google_AdClient';
   protected $__itemsDataType = 'array';
@@ -815,7 +814,7 @@ class Google_AdClients extends Google_Model {
   }
 }
 
-class Google_AdCode extends Google_Model {
+class Google_AdsenseHost_AdCode extends Google_Model {
   public $adCode;
   public $kind;
   public function setAdCode( $adCode) {
@@ -832,7 +831,7 @@ class Google_AdCode extends Google_Model {
   }
 }
 
-class Google_AdStyle extends Google_Model {
+class Google_AdsenseHost_AdStyle extends Google_Model {
   protected $__colorsType = 'Google_AdStyleColors';
   protected $__colorsDataType = '';
   public $colors;
@@ -841,7 +840,7 @@ class Google_AdStyle extends Google_Model {
   protected $__fontDataType = '';
   public $font;
   public $kind;
-  public function setColors(Google_AdStyleColors $colors) {
+  public function setColors(Google_AdsenseHost_AdStyleColors $colors) {
     $this->colors = $colors;
   }
   public function getColors() {
@@ -853,7 +852,7 @@ class Google_AdStyle extends Google_Model {
   public function getCorners() {
     return $this->corners;
   }
-  public function setFont(Google_AdStyleFont $font) {
+  public function setFont(Google_AdsenseHost_AdStyleFont $font) {
     $this->font = $font;
   }
   public function getFont() {
@@ -867,7 +866,7 @@ class Google_AdStyle extends Google_Model {
   }
 }
 
-class Google_AdStyleColors extends Google_Model {
+class Google_AdsenseHost_AdStyleColors extends Google_Model {
   public $background;
   public $border;
   public $text;
@@ -905,7 +904,7 @@ class Google_AdStyleColors extends Google_Model {
   }
 }
 
-class Google_AdStyleFont extends Google_Model {
+class Google_AdsenseHost_AdStyleFont extends Google_Model {
   public $family;
   public $size;
   public function setFamily( $family) {
@@ -922,7 +921,7 @@ class Google_AdStyleFont extends Google_Model {
   }
 }
 
-class Google_AdUnit extends Google_Model {
+class Google_AdsenseHost_AdUnit extends Google_Model {
   public $code;
   protected $__contentAdsSettingsType = 'Google_AdUnitContentAdsSettings';
   protected $__contentAdsSettingsDataType = '';
@@ -943,13 +942,13 @@ class Google_AdUnit extends Google_Model {
   public function getCode() {
     return $this->code;
   }
-  public function setContentAdsSettings(Google_AdUnitContentAdsSettings $contentAdsSettings) {
+  public function setContentAdsSettings(Google_AdsenseHost_AdUnitContentAdsSettings $contentAdsSettings) {
     $this->contentAdsSettings = $contentAdsSettings;
   }
   public function getContentAdsSettings() {
     return $this->contentAdsSettings;
   }
-  public function setCustomStyle(Google_AdStyle $customStyle) {
+  public function setCustomStyle(Google_AdsenseHost_AdStyle $customStyle) {
     $this->customStyle = $customStyle;
   }
   public function getCustomStyle() {
@@ -967,7 +966,7 @@ class Google_AdUnit extends Google_Model {
   public function getKind() {
     return $this->kind;
   }
-  public function setMobileContentAdsSettings(Google_AdUnitMobileContentAdsSettings $mobileContentAdsSettings) {
+  public function setMobileContentAdsSettings(Google_AdsenseHost_AdUnitMobileContentAdsSettings $mobileContentAdsSettings) {
     $this->mobileContentAdsSettings = $mobileContentAdsSettings;
   }
   public function getMobileContentAdsSettings() {
@@ -987,13 +986,13 @@ class Google_AdUnit extends Google_Model {
   }
 }
 
-class Google_AdUnitContentAdsSettings extends Google_Model {
+class Google_AdsenseHost_AdUnitContentAdsSettings extends Google_Model {
   protected $__backupOptionType = 'Google_AdUnitContentAdsSettingsBackupOption';
   protected $__backupOptionDataType = '';
   public $backupOption;
   public $size;
   public $type;
-  public function setBackupOption(Google_AdUnitContentAdsSettingsBackupOption $backupOption) {
+  public function setBackupOption(Google_AdsenseHost_AdUnitContentAdsSettingsBackupOption $backupOption) {
     $this->backupOption = $backupOption;
   }
   public function getBackupOption() {
@@ -1013,7 +1012,7 @@ class Google_AdUnitContentAdsSettings extends Google_Model {
   }
 }
 
-class Google_AdUnitContentAdsSettingsBackupOption extends Google_Model {
+class Google_AdsenseHost_AdUnitContentAdsSettingsBackupOption extends Google_Model {
   public $color;
   public $type;
   public $url;
@@ -1037,7 +1036,7 @@ class Google_AdUnitContentAdsSettingsBackupOption extends Google_Model {
   }
 }
 
-class Google_AdUnitMobileContentAdsSettings extends Google_Model {
+class Google_AdsenseHost_AdUnitMobileContentAdsSettings extends Google_Model {
   public $markupLanguage;
   public $scriptingLanguage;
   public $size;
@@ -1068,7 +1067,7 @@ class Google_AdUnitMobileContentAdsSettings extends Google_Model {
   }
 }
 
-class Google_AdUnits extends Google_Model {
+class Google_AdsenseHost_AdUnits extends Google_Model {
   public $etag;
   protected $__itemsType = 'Google_AdUnit';
   protected $__itemsDataType = 'array';
@@ -1169,7 +1168,7 @@ class Google_AssociationSession extends Google_Model {
   }
 }
 
-class Google_CustomChannel extends Google_Model {
+class Google_AdsenseHost_CustomChannel extends Google_Model {
   public $code;
   public $id;
   public $kind;
@@ -1200,7 +1199,7 @@ class Google_CustomChannel extends Google_Model {
   }
 }
 
-class Google_CustomChannels extends Google_Model {
+class Google_AdsenseHost_CustomChannels extends Google_Model {
   public $etag;
   protected $__itemsType = 'Google_CustomChannel';
   protected $__itemsDataType = 'array';
@@ -1234,7 +1233,7 @@ class Google_CustomChannels extends Google_Model {
   }
 }
 
-class Google_Report extends Google_Model {
+class Google_AdsenseHost_Report extends Google_Model {
   public $averages;
   protected $__headersType = 'Google_ReportHeaders';
   protected $__headersDataType = 'array';
@@ -1293,7 +1292,7 @@ class Google_Report extends Google_Model {
   }
 }
 
-class Google_ReportHeaders extends Google_Model {
+class Google_AdsenseHost_ReportHeaders extends Google_Model {
   public $currency;
   public $name;
   public $type;
@@ -1317,7 +1316,7 @@ class Google_ReportHeaders extends Google_Model {
   }
 }
 
-class Google_UrlChannel extends Google_Model {
+class Google_AdsenseHost_UrlChannel extends Google_Model {
   public $id;
   public $kind;
   public $urlPattern;
@@ -1341,7 +1340,7 @@ class Google_UrlChannel extends Google_Model {
   }
 }
 
-class Google_UrlChannels extends Google_Model {
+class Google_AdsenseHost_UrlChannels extends Google_Model {
   public $etag;
   protected $__itemsType = 'Google_UrlChannel';
   protected $__itemsDataType = 'array';

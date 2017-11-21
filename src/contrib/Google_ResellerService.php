@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "customers" collection of methods.
    * Typical usage is:

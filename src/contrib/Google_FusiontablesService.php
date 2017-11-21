@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "column" collection of methods.
    * Typical usage is:
@@ -322,14 +321,14 @@
      * @param array $optParams Optional parameters.
      *
      * @opt_param bool copyPresentation Whether to also copy tabs, styles, and templates. Default is false.
-     * @return Google_Table
+     * @return Google_FusionTable_Table
      */
     public function copy($tableId, $optParams = array()) {
       $params = array('tableId' => $tableId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('copy', array($params));
       if ($this->useObjects()) {
-        return new Google_Table($data);
+        return new Google_FusionTable_Table($data);
       } else {
         return $data;
       }
@@ -351,14 +350,14 @@
      *
      * @param string $tableId Identifier(ID) for the table being requested.
      * @param array $optParams Optional parameters.
-     * @return Google_Table
+     * @return Google_FusionTable_Table
      */
     public function get($tableId, $optParams = array()) {
       $params = array('tableId' => $tableId);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Table($data);
+        return new Google_FusionTable_Table($data);
       } else {
         return $data;
       }
@@ -394,14 +393,14 @@
      *
      * @opt_param string delimiter The delimiter used to separate cell values. This can only consist of a single character. Default is ','.
      * @opt_param string encoding The encoding of the content. Default is UTF-8. Use 'auto-detect' if you are unsure of the encoding.
-     * @return Google_Table
+     * @return Google_FusionTable_Table
      */
     public function importTable($name, $optParams = array()) {
       $params = array('name' => $name);
       $params = array_merge($params, $optParams);
       $data = $this->__call('importTable', array($params));
       if ($this->useObjects()) {
-        return new Google_Table($data);
+        return new Google_FusionTable_Table($data);
       } else {
         return $data;
       }
@@ -409,16 +408,16 @@
     /**
      * Creates a new table. (table.insert)
      *
-     * @param Google_Table $postBody
+     * @param Google_FusionTable_Table $postBody
      * @param array $optParams Optional parameters.
-     * @return Google_Table
+     * @return Google_FusionTable_Table
      */
-    public function insert(Google_Table $postBody, $optParams = array()) {
+    public function insert(Google_FusionTable_Table $postBody, $optParams = array()) {
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Table($data);
+        return new Google_FusionTable_Table($data);
       } else {
         return $data;
       }
@@ -430,14 +429,14 @@
      *
      * @opt_param string maxResults Maximum number of styles to return. Optional. Default is 5.
      * @opt_param string pageToken Continuation token specifying which result page to return. Optional.
-     * @return Google_TableList
+     * @return Google_FusionTable_TableList
      */
     public function listTable($optParams = array()) {
       $params = array();
       $params = array_merge($params, $optParams);
       $data = $this->__call('list', array($params));
       if ($this->useObjects()) {
-        return new Google_TableList($data);
+        return new Google_FusionTable_TableList($data);
       } else {
         return $data;
       }
@@ -447,18 +446,18 @@
      * attribution will be updated. This method supports patch semantics. (table.patch)
      *
      * @param string $tableId ID of the table that is being updated.
-     * @param Google_Table $postBody
+     * @param Google_FusionTable_Table $postBody
      * @param array $optParams Optional parameters.
      *
      * @opt_param bool replaceViewDefinition Should the view definition also be updated? The specified view definition replaces the existing one. Only a view can be updated with a new definition.
-     * @return Google_Table
+     * @return Google_FusionTable_Table
      */
-    public function patch($tableId, Google_Table $postBody, $optParams = array()) {
+    public function patch($tableId, Google_FusionTable_Table $postBody, $optParams = array()) {
       $params = array('tableId' => $tableId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_Table($data);
+        return new Google_FusionTable_Table($data);
       } else {
         return $data;
       }
@@ -468,18 +467,18 @@
      * attribution will be updated. (table.update)
      *
      * @param string $tableId ID of the table that is being updated.
-     * @param Google_Table $postBody
+     * @param Google_FusionTable_Table $postBody
      * @param array $optParams Optional parameters.
      *
      * @opt_param bool replaceViewDefinition Should the view definition also be updated? The specified view definition replaces the existing one. Only a view can be updated with a new definition.
-     * @return Google_Table
+     * @return Google_FusionTable_Table
      */
-    public function update($tableId, Google_Table $postBody, $optParams = array()) {
+    public function update($tableId, Google_FusionTable_Table $postBody, $optParams = array()) {
       $params = array('tableId' => $tableId, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Table($data);
+        return new Google_FusionTable_Table($data);
       } else {
         return $data;
       }
@@ -1203,7 +1202,7 @@ class Google_StyleSettingList extends Google_Model {
   }
 }
 
-class Google_Table extends Google_Model {
+class Google_FusionTable_Table extends Google_Model {
   public $attribution;
   public $attributionLink;
   public $baseTableIds;
@@ -1280,7 +1279,7 @@ class Google_Table extends Google_Model {
   }
 }
 
-class Google_TableList extends Google_Model {
+class Google_FusionTable_TableList extends Google_Model {
   protected $__itemsType = 'Google_Table';
   protected $__itemsDataType = 'array';
   public $items;
