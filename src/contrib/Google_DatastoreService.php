@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "datasets" collection of methods.
    * Typical usage is:
@@ -22,7 +21,7 @@
    *   $datasets = $datastoreService->datasets;
    *  </code>
    */
-  class Google_DatasetsServiceResource extends Google_ServiceResource {
+  class Google_Datastore_DatasetsServiceResource extends Google_ServiceResource {
 
     /**
      * Allocate IDs for incomplete keys (useful for referencing an entity before it is inserted).
@@ -180,7 +179,7 @@ class Google_DatastoreService extends Google_Service {
     $this->serviceName = 'datastore';
 
     $client->addService($this->serviceName, $this->version);
-    $this->datasets = new Google_DatasetsServiceResource($this, $this->serviceName, 'datasets', json_decode('{"methods": {"allocateIds": {"id": "datastore.datasets.allocateIds", "path": "{datasetId}/allocateIds", "httpMethod": "POST", "parameters": {"datasetId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "AllocateIdsRequest"}, "response": {"$ref": "AllocateIdsResponse"}, "scopes": ["https://www.googleapis.com/auth/userinfo.email"]}, "beginTransaction": {"id": "datastore.datasets.beginTransaction", "path": "{datasetId}/beginTransaction", "httpMethod": "POST", "parameters": {"datasetId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "BeginTransactionRequest"}, "response": {"$ref": "BeginTransactionResponse"}, "scopes": ["https://www.googleapis.com/auth/userinfo.email"]}, "blindWrite": {"id": "datastore.datasets.blindWrite", "path": "{datasetId}/blindWrite", "httpMethod": "POST", "parameters": {"datasetId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "BlindWriteRequest"}, "response": {"$ref": "BlindWriteResponse"}, "scopes": ["https://www.googleapis.com/auth/userinfo.email"]}, "commit": {"id": "datastore.datasets.commit", "path": "{datasetId}/commit", "httpMethod": "POST", "parameters": {"datasetId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "CommitRequest"}, "response": {"$ref": "CommitResponse"}, "scopes": ["https://www.googleapis.com/auth/userinfo.email"]}, "lookup": {"id": "datastore.datasets.lookup", "path": "{datasetId}/lookup", "httpMethod": "POST", "parameters": {"datasetId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "LookupRequest"}, "response": {"$ref": "LookupResponse"}, "scopes": ["https://www.googleapis.com/auth/userinfo.email"]}, "rollback": {"id": "datastore.datasets.rollback", "path": "{datasetId}/rollback", "httpMethod": "POST", "parameters": {"datasetId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "RollbackRequest"}, "response": {"$ref": "RollbackResponse"}, "scopes": ["https://www.googleapis.com/auth/userinfo.email"]}, "runQuery": {"id": "datastore.datasets.runQuery", "path": "{datasetId}/runQuery", "httpMethod": "POST", "parameters": {"datasetId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "RunQueryRequest"}, "response": {"$ref": "RunQueryResponse"}, "scopes": ["https://www.googleapis.com/auth/userinfo.email"]}}}', true));
+    $this->datasets = new Google_Datastore_DatasetsServiceResource($this, $this->serviceName, 'datasets', json_decode('{"methods": {"allocateIds": {"id": "datastore.datasets.allocateIds", "path": "{datasetId}/allocateIds", "httpMethod": "POST", "parameters": {"datasetId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "AllocateIdsRequest"}, "response": {"$ref": "AllocateIdsResponse"}, "scopes": ["https://www.googleapis.com/auth/userinfo.email"]}, "beginTransaction": {"id": "datastore.datasets.beginTransaction", "path": "{datasetId}/beginTransaction", "httpMethod": "POST", "parameters": {"datasetId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "BeginTransactionRequest"}, "response": {"$ref": "BeginTransactionResponse"}, "scopes": ["https://www.googleapis.com/auth/userinfo.email"]}, "blindWrite": {"id": "datastore.datasets.blindWrite", "path": "{datasetId}/blindWrite", "httpMethod": "POST", "parameters": {"datasetId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "BlindWriteRequest"}, "response": {"$ref": "BlindWriteResponse"}, "scopes": ["https://www.googleapis.com/auth/userinfo.email"]}, "commit": {"id": "datastore.datasets.commit", "path": "{datasetId}/commit", "httpMethod": "POST", "parameters": {"datasetId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "CommitRequest"}, "response": {"$ref": "CommitResponse"}, "scopes": ["https://www.googleapis.com/auth/userinfo.email"]}, "lookup": {"id": "datastore.datasets.lookup", "path": "{datasetId}/lookup", "httpMethod": "POST", "parameters": {"datasetId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "LookupRequest"}, "response": {"$ref": "LookupResponse"}, "scopes": ["https://www.googleapis.com/auth/userinfo.email"]}, "rollback": {"id": "datastore.datasets.rollback", "path": "{datasetId}/rollback", "httpMethod": "POST", "parameters": {"datasetId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "RollbackRequest"}, "response": {"$ref": "RollbackResponse"}, "scopes": ["https://www.googleapis.com/auth/userinfo.email"]}, "runQuery": {"id": "datastore.datasets.runQuery", "path": "{datasetId}/runQuery", "httpMethod": "POST", "parameters": {"datasetId": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "RunQueryRequest"}, "response": {"$ref": "RunQueryResponse"}, "scopes": ["https://www.googleapis.com/auth/userinfo.email"]}}}', true));
 
   }
 }
@@ -610,7 +609,7 @@ class Google_PartitionId extends Google_Model {
   }
 }
 
-class Google_Property extends Google_Model {
+class Google_Datastore_Property extends Google_Model {
   public $multi;
   protected $__valuesType = 'Google_Value';
   protected $__valuesDataType = 'array';

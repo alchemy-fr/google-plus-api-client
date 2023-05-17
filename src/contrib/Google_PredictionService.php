@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "hostedmodels" collection of methods.
    * Typical usage is:

@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "detections" collection of methods.
    * Typical usage is:

@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "pagespeedapi" collection of methods.
    * Typical usage is:

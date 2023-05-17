@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "advertisers" collection of methods.
    * Typical usage is:

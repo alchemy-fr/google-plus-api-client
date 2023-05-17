@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "activities" collection of methods.
    * Typical usage is:

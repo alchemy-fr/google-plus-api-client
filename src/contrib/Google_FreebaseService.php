@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "text" collection of methods.
    * Typical usage is:

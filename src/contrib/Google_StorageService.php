@@ -13,7 +13,6 @@
  * the License.
  */
 
-
   /**
    * The "bucketAccessControls" collection of methods.
    * Typical usage is:
@@ -167,14 +166,14 @@
      * @opt_param string ifMetagenerationMatch Makes the return of the bucket metadata conditional on whether the bucket's current metageneration matches the given value.
      * @opt_param string ifMetagenerationNotMatch Makes the return of the bucket metadata conditional on whether the bucket's current metageneration does not match the given value.
      * @opt_param string projection Set of properties to return. Defaults to noAcl.
-     * @return Google_Bucket
+     * @return Google_Storage_Bucket
      */
     public function get($bucket, $optParams = array()) {
       $params = array('bucket' => $bucket);
       $params = array_merge($params, $optParams);
       $data = $this->__call('get', array($params));
       if ($this->useObjects()) {
-        return new Google_Bucket($data);
+        return new Google_Storage_Bucket($data);
       } else {
         return $data;
       }
@@ -183,18 +182,18 @@
      * Creates a new bucket. (buckets.insert)
      *
      * @param string $project A valid API project identifier.
-     * @param Google_Bucket $postBody
+     * @param Google_Storage_Bucket $postBody
      * @param array $optParams Optional parameters.
      *
      * @opt_param string projection Set of properties to return. Defaults to noAcl, unless the bucket resource specifies acl or defaultObjectAcl properties, when it defaults to full.
-     * @return Google_Bucket
+     * @return Google_Storage_Bucket
      */
-    public function insert($project, Google_Bucket $postBody, $optParams = array()) {
+    public function insert($project, Google_Storage_Bucket $postBody, $optParams = array()) {
       $params = array('project' => $project, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('insert', array($params));
       if ($this->useObjects()) {
-        return new Google_Bucket($data);
+        return new Google_Storage_Bucket($data);
       } else {
         return $data;
       }
@@ -224,20 +223,20 @@
      * Updates a bucket. This method supports patch semantics. (buckets.patch)
      *
      * @param string $bucket Name of a bucket.
-     * @param Google_Bucket $postBody
+     * @param Google_Storage_Bucket $postBody
      * @param array $optParams Optional parameters.
      *
      * @opt_param string ifMetagenerationMatch Makes the return of the bucket metadata conditional on whether the bucket's current metageneration matches the given value.
      * @opt_param string ifMetagenerationNotMatch Makes the return of the bucket metadata conditional on whether the bucket's current metageneration does not match the given value.
      * @opt_param string projection Set of properties to return. Defaults to full.
-     * @return Google_Bucket
+     * @return Google_Storage_Bucket
      */
-    public function patch($bucket, Google_Bucket $postBody, $optParams = array()) {
+    public function patch($bucket, Google_Storage_Bucket $postBody, $optParams = array()) {
       $params = array('bucket' => $bucket, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('patch', array($params));
       if ($this->useObjects()) {
-        return new Google_Bucket($data);
+        return new Google_Storage_Bucket($data);
       } else {
         return $data;
       }
@@ -246,20 +245,20 @@
      * Updates a bucket. (buckets.update)
      *
      * @param string $bucket Name of a bucket.
-     * @param Google_Bucket $postBody
+     * @param Google_Storage_Bucket $postBody
      * @param array $optParams Optional parameters.
      *
      * @opt_param string ifMetagenerationMatch Makes the return of the bucket metadata conditional on whether the bucket's current metageneration matches the given value.
      * @opt_param string ifMetagenerationNotMatch Makes the return of the bucket metadata conditional on whether the bucket's current metageneration does not match the given value.
      * @opt_param string projection Set of properties to return. Defaults to full.
-     * @return Google_Bucket
+     * @return Google_Storage_Bucket
      */
-    public function update($bucket, Google_Bucket $postBody, $optParams = array()) {
+    public function update($bucket, Google_Storage_Bucket $postBody, $optParams = array()) {
       $params = array('bucket' => $bucket, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('update', array($params));
       if ($this->useObjects()) {
-        return new Google_Bucket($data);
+        return new Google_Storage_Bucket($data);
       } else {
         return $data;
       }
@@ -274,15 +273,15 @@
    *   $channels = $storageService->channels;
    *  </code>
    */
-  class Google_ChannelsServiceResource extends Google_ServiceResource {
+  class Google_Storage_ChannelsServiceResource extends Google_ServiceResource {
 
     /**
      * (channels.stop)
      *
-     * @param Google_Channel $postBody
+     * @param Google_Storage_Channel $postBody
      * @param array $optParams Optional parameters.
      */
-    public function stop(Google_Channel $postBody, $optParams = array()) {
+    public function stop(Google_Storage_Channel $postBody, $optParams = array()) {
       $params = array('postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('stop', array($params));
@@ -762,7 +761,7 @@
      * Watch for changes on all objects in a bucket. (objects.watchAll)
      *
      * @param string $bucket Name of the bucket in which to look for objects.
-     * @param Google_Channel $postBody
+     * @param Google_Storage_Channel $postBody
      * @param array $optParams Optional parameters.
      *
      * @opt_param string delimiter Returns results in a directory-like mode. items will contain only objects whose names, aside from the prefix, do not contain delimiter. Objects whose names, aside from the prefix, contain delimiter will have their name, truncated after the delimiter, returned in prefixes. Duplicate prefixes are omitted.
@@ -771,14 +770,14 @@
      * @opt_param string prefix Filter results to objects whose names begin with this prefix.
      * @opt_param string projection Set of properties to return. Defaults to noAcl.
      * @opt_param bool versions If true, lists all versions of a file as distinct results.
-     * @return Google_Channel
+     * @return Google_Storage_Channel
      */
-    public function watchAll($bucket, Google_Channel $postBody, $optParams = array()) {
+    public function watchAll($bucket, Google_Storage_Channel $postBody, $optParams = array()) {
       $params = array('bucket' => $bucket, 'postBody' => $postBody);
       $params = array_merge($params, $optParams);
       $data = $this->__call('watchAll', array($params));
       if ($this->useObjects()) {
-        return new Google_Channel($data);
+        return new Google_Storage_Channel($data);
       } else {
         return $data;
       }
@@ -819,7 +818,7 @@ class Google_StorageService extends Google_Service {
     $client->addService($this->serviceName, $this->version);
     $this->bucketAccessControls = new Google_BucketAccessControlsServiceResource($this, $this->serviceName, 'bucketAccessControls', json_decode('{"methods": {"delete": {"id": "storage.bucketAccessControls.delete", "path": "b/{bucket}/acl/{entity}", "httpMethod": "DELETE", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "entity": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control"]}, "get": {"id": "storage.bucketAccessControls.get", "path": "b/{bucket}/acl/{entity}", "httpMethod": "GET", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "entity": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "BucketAccessControl"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control"]}, "insert": {"id": "storage.bucketAccessControls.insert", "path": "b/{bucket}/acl", "httpMethod": "POST", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "BucketAccessControl"}, "response": {"$ref": "BucketAccessControl"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control"]}, "list": {"id": "storage.bucketAccessControls.list", "path": "b/{bucket}/acl", "httpMethod": "GET", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "BucketAccessControls"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control"]}, "patch": {"id": "storage.bucketAccessControls.patch", "path": "b/{bucket}/acl/{entity}", "httpMethod": "PATCH", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "entity": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "BucketAccessControl"}, "response": {"$ref": "BucketAccessControl"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control"]}, "update": {"id": "storage.bucketAccessControls.update", "path": "b/{bucket}/acl/{entity}", "httpMethod": "PUT", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "entity": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "BucketAccessControl"}, "response": {"$ref": "BucketAccessControl"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control"]}}}', true));
     $this->buckets = new Google_BucketsServiceResource($this, $this->serviceName, 'buckets', json_decode('{"methods": {"delete": {"id": "storage.buckets.delete", "path": "b/{bucket}", "httpMethod": "DELETE", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "ifMetagenerationMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifMetagenerationNotMatch": {"type": "string", "format": "uint64", "location": "query"}}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control", "https://www.googleapis.com/auth/devstorage.read_write"]}, "get": {"id": "storage.buckets.get", "path": "b/{bucket}", "httpMethod": "GET", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "ifMetagenerationMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifMetagenerationNotMatch": {"type": "string", "format": "uint64", "location": "query"}, "projection": {"type": "string", "enum": ["full", "noAcl"], "location": "query"}}, "response": {"$ref": "Bucket"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control", "https://www.googleapis.com/auth/devstorage.read_only", "https://www.googleapis.com/auth/devstorage.read_write"]}, "insert": {"id": "storage.buckets.insert", "path": "b", "httpMethod": "POST", "parameters": {"project": {"type": "string", "required": true, "location": "query"}, "projection": {"type": "string", "enum": ["full", "noAcl"], "location": "query"}}, "request": {"$ref": "Bucket"}, "response": {"$ref": "Bucket"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control", "https://www.googleapis.com/auth/devstorage.read_write"]}, "list": {"id": "storage.buckets.list", "path": "b", "httpMethod": "GET", "parameters": {"maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "project": {"type": "string", "required": true, "location": "query"}, "projection": {"type": "string", "enum": ["full", "noAcl"], "location": "query"}}, "response": {"$ref": "Buckets"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control", "https://www.googleapis.com/auth/devstorage.read_only", "https://www.googleapis.com/auth/devstorage.read_write"]}, "patch": {"id": "storage.buckets.patch", "path": "b/{bucket}", "httpMethod": "PATCH", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "ifMetagenerationMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifMetagenerationNotMatch": {"type": "string", "format": "uint64", "location": "query"}, "projection": {"type": "string", "enum": ["full", "noAcl"], "location": "query"}}, "request": {"$ref": "Bucket"}, "response": {"$ref": "Bucket"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control", "https://www.googleapis.com/auth/devstorage.read_write"]}, "update": {"id": "storage.buckets.update", "path": "b/{bucket}", "httpMethod": "PUT", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "ifMetagenerationMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifMetagenerationNotMatch": {"type": "string", "format": "uint64", "location": "query"}, "projection": {"type": "string", "enum": ["full", "noAcl"], "location": "query"}}, "request": {"$ref": "Bucket"}, "response": {"$ref": "Bucket"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control", "https://www.googleapis.com/auth/devstorage.read_write"]}}}', true));
-    $this->channels = new Google_ChannelsServiceResource($this, $this->serviceName, 'channels', json_decode('{"methods": {"stop": {"id": "storage.channels.stop", "path": "channels/stop", "httpMethod": "POST", "request": {"$ref": "Channel"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control", "https://www.googleapis.com/auth/devstorage.read_only", "https://www.googleapis.com/auth/devstorage.read_write"]}}}', true));
+    $this->channels = new Google_Storage_ChannelsServiceResource($this, $this->serviceName, 'channels', json_decode('{"methods": {"stop": {"id": "storage.channels.stop", "path": "channels/stop", "httpMethod": "POST", "request": {"$ref": "Channel"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control", "https://www.googleapis.com/auth/devstorage.read_only", "https://www.googleapis.com/auth/devstorage.read_write"]}}}', true));
     $this->defaultObjectAccessControls = new Google_DefaultObjectAccessControlsServiceResource($this, $this->serviceName, 'defaultObjectAccessControls', json_decode('{"methods": {"delete": {"id": "storage.defaultObjectAccessControls.delete", "path": "b/{bucket}/defaultObjectAcl/{entity}", "httpMethod": "DELETE", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "entity": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control"]}, "get": {"id": "storage.defaultObjectAccessControls.get", "path": "b/{bucket}/defaultObjectAcl/{entity}", "httpMethod": "GET", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "entity": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "ObjectAccessControl"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control"]}, "insert": {"id": "storage.defaultObjectAccessControls.insert", "path": "b/{bucket}/defaultObjectAcl", "httpMethod": "POST", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "ObjectAccessControl"}, "response": {"$ref": "ObjectAccessControl"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control"]}, "list": {"id": "storage.defaultObjectAccessControls.list", "path": "b/{bucket}/defaultObjectAcl", "httpMethod": "GET", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "ObjectAccessControls"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control"]}, "patch": {"id": "storage.defaultObjectAccessControls.patch", "path": "b/{bucket}/defaultObjectAcl/{entity}", "httpMethod": "PATCH", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "entity": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "ObjectAccessControl"}, "response": {"$ref": "ObjectAccessControl"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control"]}, "update": {"id": "storage.defaultObjectAccessControls.update", "path": "b/{bucket}/defaultObjectAcl/{entity}", "httpMethod": "PUT", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "entity": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "ObjectAccessControl"}, "response": {"$ref": "ObjectAccessControl"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control"]}}}', true));
     $this->objectAccessControls = new Google_ObjectAccessControlsServiceResource($this, $this->serviceName, 'objectAccessControls', json_decode('{"methods": {"delete": {"id": "storage.objectAccessControls.delete", "path": "b/{bucket}/o/{object}/acl/{entity}", "httpMethod": "DELETE", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "entity": {"type": "string", "required": true, "location": "path"}, "generation": {"type": "string", "format": "uint64", "location": "query"}, "object": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control"]}, "get": {"id": "storage.objectAccessControls.get", "path": "b/{bucket}/o/{object}/acl/{entity}", "httpMethod": "GET", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "entity": {"type": "string", "required": true, "location": "path"}, "generation": {"type": "string", "format": "uint64", "location": "query"}, "object": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "ObjectAccessControl"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control"]}, "insert": {"id": "storage.objectAccessControls.insert", "path": "b/{bucket}/o/{object}/acl", "httpMethod": "POST", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "generation": {"type": "string", "format": "uint64", "location": "query"}, "object": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "ObjectAccessControl"}, "response": {"$ref": "ObjectAccessControl"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control"]}, "list": {"id": "storage.objectAccessControls.list", "path": "b/{bucket}/o/{object}/acl", "httpMethod": "GET", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "generation": {"type": "string", "format": "uint64", "location": "query"}, "object": {"type": "string", "required": true, "location": "path"}}, "response": {"$ref": "ObjectAccessControls"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control"]}, "patch": {"id": "storage.objectAccessControls.patch", "path": "b/{bucket}/o/{object}/acl/{entity}", "httpMethod": "PATCH", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "entity": {"type": "string", "required": true, "location": "path"}, "generation": {"type": "string", "format": "uint64", "location": "query"}, "object": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "ObjectAccessControl"}, "response": {"$ref": "ObjectAccessControl"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control"]}, "update": {"id": "storage.objectAccessControls.update", "path": "b/{bucket}/o/{object}/acl/{entity}", "httpMethod": "PUT", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "entity": {"type": "string", "required": true, "location": "path"}, "generation": {"type": "string", "format": "uint64", "location": "query"}, "object": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "ObjectAccessControl"}, "response": {"$ref": "ObjectAccessControl"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control"]}}}', true));
     $this->objects = new Google_ObjectsServiceResource($this, $this->serviceName, 'objects', json_decode('{"methods": {"compose": {"id": "storage.objects.compose", "path": "b/{destinationBucket}/o/{destinationObject}/compose", "httpMethod": "POST", "parameters": {"destinationBucket": {"type": "string", "required": true, "location": "path"}, "destinationObject": {"type": "string", "required": true, "location": "path"}, "ifGenerationMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifMetagenerationMatch": {"type": "string", "format": "uint64", "location": "query"}}, "request": {"$ref": "ComposeRequest"}, "response": {"$ref": "Object"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control", "https://www.googleapis.com/auth/devstorage.read_write"], "supportsMediaDownload": true}, "copy": {"id": "storage.objects.copy", "path": "b/{sourceBucket}/o/{sourceObject}/copyTo/b/{destinationBucket}/o/{destinationObject}", "httpMethod": "POST", "parameters": {"destinationBucket": {"type": "string", "required": true, "location": "path"}, "destinationObject": {"type": "string", "required": true, "location": "path"}, "ifGenerationMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifGenerationNotMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifMetagenerationMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifMetagenerationNotMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifSourceGenerationMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifSourceGenerationNotMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifSourceMetagenerationMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifSourceMetagenerationNotMatch": {"type": "string", "format": "uint64", "location": "query"}, "projection": {"type": "string", "enum": ["full", "noAcl"], "location": "query"}, "sourceBucket": {"type": "string", "required": true, "location": "path"}, "sourceGeneration": {"type": "string", "format": "uint64", "location": "query"}, "sourceObject": {"type": "string", "required": true, "location": "path"}}, "request": {"$ref": "Object"}, "response": {"$ref": "Object"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control", "https://www.googleapis.com/auth/devstorage.read_write"], "supportsMediaDownload": true}, "delete": {"id": "storage.objects.delete", "path": "b/{bucket}/o/{object}", "httpMethod": "DELETE", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "generation": {"type": "string", "format": "uint64", "location": "query"}, "ifGenerationMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifGenerationNotMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifMetagenerationMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifMetagenerationNotMatch": {"type": "string", "format": "uint64", "location": "query"}, "object": {"type": "string", "required": true, "location": "path"}}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control", "https://www.googleapis.com/auth/devstorage.read_write"]}, "get": {"id": "storage.objects.get", "path": "b/{bucket}/o/{object}", "httpMethod": "GET", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "generation": {"type": "string", "format": "uint64", "location": "query"}, "ifGenerationMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifGenerationNotMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifMetagenerationMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifMetagenerationNotMatch": {"type": "string", "format": "uint64", "location": "query"}, "object": {"type": "string", "required": true, "location": "path"}, "projection": {"type": "string", "enum": ["full", "noAcl"], "location": "query"}}, "response": {"$ref": "Object"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control", "https://www.googleapis.com/auth/devstorage.read_only", "https://www.googleapis.com/auth/devstorage.read_write"], "supportsMediaDownload": true}, "insert": {"id": "storage.objects.insert", "path": "b/{bucket}/o", "httpMethod": "POST", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "ifGenerationMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifGenerationNotMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifMetagenerationMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifMetagenerationNotMatch": {"type": "string", "format": "uint64", "location": "query"}, "name": {"type": "string", "location": "query"}, "projection": {"type": "string", "enum": ["full", "noAcl"], "location": "query"}}, "request": {"$ref": "Object"}, "response": {"$ref": "Object"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control", "https://www.googleapis.com/auth/devstorage.read_write"], "supportsMediaDownload": true, "supportsMediaUpload": true, "mediaUpload": {"accept": ["*/*"], "protocols": {"simple": {"multipart": true, "path": "/upload/storage/v1beta2/b/{bucket}/o"}, "resumable": {"multipart": true, "path": "/resumable/upload/storage/v1beta2/b/{bucket}/o"}}}}, "list": {"id": "storage.objects.list", "path": "b/{bucket}/o", "httpMethod": "GET", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "delimiter": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "prefix": {"type": "string", "location": "query"}, "projection": {"type": "string", "enum": ["full", "noAcl"], "location": "query"}, "versions": {"type": "boolean", "location": "query"}}, "response": {"$ref": "Objects"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control", "https://www.googleapis.com/auth/devstorage.read_only", "https://www.googleapis.com/auth/devstorage.read_write"], "supportsSubscription": true}, "patch": {"id": "storage.objects.patch", "path": "b/{bucket}/o/{object}", "httpMethod": "PATCH", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "generation": {"type": "string", "format": "uint64", "location": "query"}, "ifGenerationMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifGenerationNotMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifMetagenerationMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifMetagenerationNotMatch": {"type": "string", "format": "uint64", "location": "query"}, "object": {"type": "string", "required": true, "location": "path"}, "projection": {"type": "string", "enum": ["full", "noAcl"], "location": "query"}}, "request": {"$ref": "Object"}, "response": {"$ref": "Object"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control", "https://www.googleapis.com/auth/devstorage.read_write"]}, "update": {"id": "storage.objects.update", "path": "b/{bucket}/o/{object}", "httpMethod": "PUT", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "generation": {"type": "string", "format": "uint64", "location": "query"}, "ifGenerationMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifGenerationNotMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifMetagenerationMatch": {"type": "string", "format": "uint64", "location": "query"}, "ifMetagenerationNotMatch": {"type": "string", "format": "uint64", "location": "query"}, "object": {"type": "string", "required": true, "location": "path"}, "projection": {"type": "string", "enum": ["full", "noAcl"], "location": "query"}}, "request": {"$ref": "Object"}, "response": {"$ref": "Object"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control", "https://www.googleapis.com/auth/devstorage.read_write"], "supportsMediaDownload": true}, "watchAll": {"id": "storage.objects.watchAll", "path": "b/{bucket}/o/watch", "httpMethod": "POST", "parameters": {"bucket": {"type": "string", "required": true, "location": "path"}, "delimiter": {"type": "string", "location": "query"}, "maxResults": {"type": "integer", "format": "uint32", "minimum": "0", "location": "query"}, "pageToken": {"type": "string", "location": "query"}, "prefix": {"type": "string", "location": "query"}, "projection": {"type": "string", "enum": ["full", "noAcl"], "location": "query"}, "versions": {"type": "boolean", "location": "query"}}, "request": {"$ref": "Channel"}, "response": {"$ref": "Channel"}, "scopes": ["https://www.googleapis.com/auth/devstorage.full_control", "https://www.googleapis.com/auth/devstorage.read_only", "https://www.googleapis.com/auth/devstorage.read_write"], "supportsSubscription": true}}}', true));
@@ -829,7 +828,7 @@ class Google_StorageService extends Google_Service {
 
 
 
-class Google_Bucket extends Google_Model {
+class Google_Storage_Bucket extends Google_Model {
   protected $__aclType = 'Google_BucketAccessControl';
   protected $__aclDataType = 'array';
   public $acl;
@@ -1260,7 +1259,7 @@ class Google_Buckets extends Google_Model {
   }
 }
 
-class Google_Channel extends Google_Model {
+class Google_Storage_Channel extends Google_Model {
   public $address;
   public $expiration;
   public $id;
